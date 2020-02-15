@@ -34,6 +34,6 @@ class Game {
     }
     
     func doMovement() {
-        
+        snake.didMovement()
     }
 }

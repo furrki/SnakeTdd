@@ -18,7 +18,7 @@ class GamePlayUnitTests: XCTestCase {
         game.doMovement()
         XCTAssertEqual(game.snake.headPos, CGPoint(x: 16, y: 15))
         
-        for i in 1...5 {
+        for _ in 1...5 {
             game.doMovement()
         }
         XCTAssertEqual(game.snake.headPos, CGPoint(x: 21, y: 15))
@@ -28,19 +28,12 @@ class GamePlayUnitTests: XCTestCase {
         
         XCTAssertEqual(game.snake.headPos, CGPoint(x: 21, y: 14))
         
-        for i in 1...5 {
+        for _ in 1...5 {
             game.doMovement()
         }
         
         XCTAssertEqual(game.snake.headPos, CGPoint(x: 21, y: 9))
               
-    }
-    
-    func testEatFeed() {
-        let snake: Snake = Snake(headPos: CGPoint(x: 15, y: 15), direction: .right, initialSize: 5)
-        let game: Game = Game(areaSize: CGSize(width: 150, height: 150), snake: snake)
-        game.generateFeed(CGPoint(x: 50, y: 50))
-        
     }
     
     func testSetDirection() {
@@ -75,6 +68,5 @@ class GamePlayUnitTests: XCTestCase {
         game.snake.setDirection(.down)
         game.doMovement()
         XCTAssertEqual(game.snake.lastDirection, .left)
-        
     }
 }

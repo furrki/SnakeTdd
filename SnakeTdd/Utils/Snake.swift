@@ -28,6 +28,16 @@ class Snake {
     }
     
     func setDirection(_ newDirection: MoveDirection) {
-        
+        if newDirection.getVector() + lastDirection.getVector() != CGVector(dx: 0, dy: 0) {
+            direction = newDirection
+        }
+    }
+    
+    func didMovement() {
+        self.lastDirection = self.direction
+        self.headPos = self.headPos + self.direction.getVector()
+        self.tail = self.tail.map({ (bodyPart) in
+            return bodyPart + self.direction.getVector()
+        })
     }
 }

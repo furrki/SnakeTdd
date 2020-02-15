@@ -11,7 +11,7 @@ import XCTest
 
 class SnakeInitializationTests: XCTestCase {
     func testInitGame() {
-        let game: Game = Game(areaSize: CGSize(width: 100, height: 100))
+        let game: Game = Game(areaSize: CGSize(width: 100, height: 100), snake: Snake(headPos: CGPoint(x: 15, y: 15), direction: .right, initialSize: 5))
         
         XCTAssertEqual(game.areaSize.width, 100)
         XCTAssertEqual(game.areaSize.height, 100)

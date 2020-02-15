@@ -13,8 +13,8 @@ class Game {
     private(set) var score: Int = 0
     private(set) var snake: Snake
     
-    init(areaSize: CGSize) {
+    init(areaSize: CGSize, snake: Snake) {
         self.areaSize = areaSize
-        self.snake = Snake(headPos: CGPoint(x: 15, y: 15), direction: .right, initialSize: 5)
+        self.snake = snake
     }
 }

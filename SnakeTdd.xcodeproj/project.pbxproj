@@ -99,6 +99,7 @@
 		FB35D2E623F8840D00F71097 /* SnakeTdd */ = {
 			isa = PBXGroup;
 			children = (
+				FB35D31723F8858A00F71097 /* New Group */,
 				FB35D2E723F8840D00F71097 /* AppDelegate.swift */,
 				FB35D2E923F8840D00F71097 /* SceneDelegate.swift */,
 				FB35D2EB23F8840D00F71097 /* ContentView.swift */,
@@ -134,6 +135,13 @@
 				FB35D30B23F8841100F71097 /* Info.plist */,
 			);
 			path = SnakeTddUITests;
+			sourceTree = "<group>";
+		};
+		FB35D31723F8858A00F71097 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

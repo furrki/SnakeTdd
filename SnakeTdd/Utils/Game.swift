@@ -18,6 +18,7 @@ class Game {
         self.areaSize = areaSize
         self.snake = snake
         self.feedPosition = CGPoint(x: 0, y: 0)
+        self.generateRandomFeed()
     }
     
     func generateFeed(_ pos: CGPoint) {
@@ -30,5 +31,9 @@ class Game {
             newPos = CGPoint(x: Int.random(in: 0..<Int(areaSize.width)), y: Int.random(in: 0..<Int(areaSize.height)))
         }
         generateFeed(newPos)
+    }
+    
+    func doMovement() {
+        
     }
 }

@@ -11,23 +11,70 @@ import XCTest
 
 class GamePlayUnitTests: XCTestCase {
 
-    func testFeedGeneration() {
-        let snake: Snake = Snake(headPos: CGPoint(x: 15, y: 15), direction: .right, initialSize: 5)
-        let game: Game = Game(areaSize: CGSize(width: 150, height: 150), snake: snake)
-        game.generateFeed(CGPoint(x: 50, y: 50))
-       
-        XCTAssertEqual(game.feedPosition.x, 50)
-        XCTAssertEqual(game.feedPosition.y, 50)
-    }
-    
-    func testRandomFeedGeneration() {
+    func testMovement() {
         let snake: Snake = Snake(headPos: CGPoint(x: 15, y: 15), direction: .right, initialSize: 5)
         let game: Game = Game(areaSize: CGSize(width: 150, height: 150), snake: snake)
         
-        game.generateRandomFeed()
-        XCTAssertFalse(game.snake.tail.contains(game.feedPosition))
-        XCTAssertNotEqual(game.feedPosition, game.snake.headPos)
-        XCTAssertTrue(game.feedPosition.x < 150 && game.feedPosition.x >= 0)
-        XCTAssertTrue(game.feedPosition.y < 150 && game.feedPosition.y >= 0)
+        game.doMovement()
+        XCTAssertEqual(game.snake.headPos, CGPoint(x: 16, y: 15))
+        
+        for i in 1...5 {
+            game.doMovement()
+        }
+        XCTAssertEqual(game.snake.headPos, CGPoint(x: 21, y: 15))
+        
+        game.snake.setDirection(.up)
+        game.doMovement()
+        
+        XCTAssertEqual(game.snake.headPos, CGPoint(x: 21, y: 14))
+        
+        for i in 1...5 {
+            game.doMovement()
+        }
+        
+        XCTAssertEqual(game.snake.headPos, CGPoint(x: 21, y: 9))
+              
+    }
+    
+    func testEatFeed() {
+        let snake: Snake = Snake(headPos: CGPoint(x: 15, y: 15), direction: .right, initialSize: 5)
+        let game: Game = Game(areaSize: CGSize(width: 150, height: 150), snake: snake)
+        game.generateFeed(CGPoint(x: 50, y: 50))
+        
+    }
+    
+    func testSetDirection() {
+        let snake: Snake = Snake(headPos: CGPoint(x: 15, y: 15), direction: .right, initialSize: 5)
+        let game: Game = Game(areaSize: CGSize(width: 150, height: 150), snake: snake)
+        
+        game.snake.setDirection(.left)
+        XCTAssertEqual(game.snake.direction, .right)
+        
+        game.snake.setDirection(.up)
+        XCTAssertEqual(game.snake.direction, .up)
+        
+        game.doMovement()
+        
+        game.snake.setDirection(.left)
+        XCTAssertEqual(game.snake.direction, .left)
+        
+    }
+    
+    func testLastDirection() {
+        let snake: Snake = Snake(headPos: CGPoint(x: 15, y: 15), direction: .right, initialSize: 5)
+        let game: Game = Game(areaSize: CGSize(width: 150, height: 150), snake: snake)
+        
+        game.doMovement()
+        XCTAssertEqual(game.snake.lastDirection, .right)
+        
+        game.snake.setDirection(.up)
+        game.doMovement()
+        XCTAssertEqual(game.snake.lastDirection, .up)
+        
+        game.snake.setDirection(.left)
+        game.snake.setDirection(.down)
+        game.doMovement()
+        XCTAssertEqual(game.snake.lastDirection, .left)
+        
     }
 }

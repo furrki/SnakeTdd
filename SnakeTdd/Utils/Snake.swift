@@ -11,11 +11,13 @@ import CoreGraphics
 class Snake {
     private(set) var headPos: CGPoint
     private(set) var direction: MoveDirection
+    private(set) var lastDirection: MoveDirection
     private(set) var tail: [CGPoint] = []
     
     init(headPos: CGPoint, direction: MoveDirection, initialSize: Int) {
         self.headPos = headPos
         self.direction = direction
+        self.lastDirection = direction
         initTail(initialSize: initialSize)
     }
     
@@ -23,5 +25,9 @@ class Snake {
         for i in 1...(initialSize-1) {
             self.tail.append(headPos + direction.getVector() * CGFloat(i))
         }
+    }
+    
+    func setDirection(_ newDirection: MoveDirection) {
+        
     }
 }

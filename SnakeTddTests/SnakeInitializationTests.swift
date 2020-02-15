@@ -11,11 +11,10 @@ import XCTest
 
 class SnakeInitializationTests: XCTestCase {
     func testInitGame() {
-        let game: Game = Game(speed: 2, areaSize: CGSize(width: 100, height: 100))
+        let game: Game = Game(areaSize: CGSize(width: 100, height: 100))
         
         XCTAssertEqual(game.areaSize.width, 100)
         XCTAssertEqual(game.areaSize.height, 100)
-        XCTAssertEqual(game.speed, 2)
         XCTAssertEqual(game.score, 0)
     }
     

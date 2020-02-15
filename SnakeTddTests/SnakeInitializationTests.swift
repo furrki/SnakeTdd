@@ -16,6 +16,7 @@ class SnakeInitializationTests: XCTestCase {
         XCTAssertEqual(game.areaSize.width, 100)
         XCTAssertEqual(game.areaSize.height, 100)
         XCTAssertEqual(game.score, 0)
+        XCTAssertNotNil(game.snake)
     }
     
     func testInitSnake() {

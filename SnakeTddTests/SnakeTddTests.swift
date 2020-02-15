@@ -29,10 +29,10 @@ class SnakeInitializationTests: XCTestCase {
     
     func testInitTail() {
         let snakeDown: Snake = Snake(headPos: CGPoint(x: 10, y: 10), direction: .down, initialSize: 4)
-        XCTAssertEqual(snakeDown.tail, [CGPoint(x: 10, y: 9), CGPoint(x: 10, y: 8), CGPoint(x: 10, y: 7)])
+        XCTAssertEqual(snakeDown.tail, [CGPoint(x: 10, y: 11), CGPoint(x: 10, y: 12), CGPoint(x: 10, y: 13)])
         
         let snakeUp: Snake = Snake(headPos: CGPoint(x: 10, y: 10), direction: .up, initialSize: 4)
-        XCTAssertEqual(snakeUp.tail, [CGPoint(x: 10, y: 11), CGPoint(x: 10, y: 12), CGPoint(x: 10, y: 13)])
+        XCTAssertEqual(snakeUp.tail, [CGPoint(x: 10, y: 9), CGPoint(x: 10, y: 8), CGPoint(x: 10, y: 7)])
         
         let snakeLeft: Snake = Snake(headPos: CGPoint(x: 10, y: 10), direction: .left, initialSize: 4)
         XCTAssertEqual(snakeLeft.tail, [CGPoint(x: 9, y: 10), CGPoint(x: 8, y: 10), CGPoint(x: 7, y: 10)])

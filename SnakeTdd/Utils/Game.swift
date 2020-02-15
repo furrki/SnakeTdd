@@ -6,7 +6,7 @@
 //  Copyright © 2020 Furkan Kaynar. All rights reserved.
 //
 
-import UIKit
+import CoreGraphics
 
 class Game {
     private(set) var speed: Int

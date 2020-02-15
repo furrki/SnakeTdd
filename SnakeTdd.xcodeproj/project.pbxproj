@@ -19,6 +19,7 @@
 		FB35D31B23F88E5300F71097 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D31A23F88E5300F71097 /* Snake.swift */; };
 		FB35D31D23F88EF300F71097 /* MoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D31C23F88EF300F71097 /* MoveDirection.swift */; };
 		FB35D31F23F8928B00F71097 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D31E23F8928B00F71097 /* CGPoint+Extensions.swift */; };
+		FB35D32123F8941900F71097 /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D32023F8941900F71097 /* CGVector+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FB35D31A23F88E5300F71097 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 		FB35D31C23F88EF300F71097 /* MoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDirection.swift; sourceTree = "<group>"; };
 		FB35D31E23F8928B00F71097 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		FB35D32023F8941900F71097 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +109,9 @@
 		FB35D2E623F8840D00F71097 /* SnakeTdd */ = {
 			isa = PBXGroup;
 			children = (
+				FB35D32223F8941F00F71097 /* Extensions */,
+				FB35D32323F8942700F71097 /* Utils */,
 				FB35D2E723F8840D00F71097 /* AppDelegate.swift */,
-				FB35D31E23F8928B00F71097 /* CGPoint+Extensions.swift */,
-				FB35D31823F8861400F71097 /* Game.swift */,
-				FB35D31A23F88E5300F71097 /* Snake.swift */,
 				FB35D31C23F88EF300F71097 /* MoveDirection.swift */,
 				FB35D2E923F8840D00F71097 /* SceneDelegate.swift */,
 				FB35D2EB23F8840D00F71097 /* ContentView.swift */,
@@ -146,6 +147,24 @@
 				FB35D30B23F8841100F71097 /* Info.plist */,
 			);
 			path = SnakeTddUITests;
+			sourceTree = "<group>";
+		};
+		FB35D32223F8941F00F71097 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FB35D32023F8941900F71097 /* CGVector+Extensions.swift */,
+				FB35D31E23F8928B00F71097 /* CGPoint+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FB35D32323F8942700F71097 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FB35D31823F8861400F71097 /* Game.swift */,
+				FB35D31A23F88E5300F71097 /* Snake.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +302,7 @@
 				FB35D31D23F88EF300F71097 /* MoveDirection.swift in Sources */,
 				FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */,
 				FB35D2EA23F8840D00F71097 /* SceneDelegate.swift in Sources */,
+				FB35D32123F8941900F71097 /* CGVector+Extensions.swift in Sources */,
 				FB35D31B23F88E5300F71097 /* Snake.swift in Sources */,
 				FB35D2EC23F8840D00F71097 /* ContentView.swift in Sources */,
 				FB35D31923F8861400F71097 /* Game.swift in Sources */,

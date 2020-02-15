@@ -1,6 +1,6 @@
 //
-//  SnakeTddTests.swift
-//  SnakeTddTests
+//  SnakeInitializationTests.swift
+//  SnakeInitializationTests
 //
 //  Created by Furkan Kaynar on 15.02.2020.
 //  Copyright © 2020 Furkan Kaynar. All rights reserved.
@@ -16,6 +16,7 @@ class SnakeInitializationTests: XCTestCase {
         XCTAssertEqual(game.areaSize.width, 100)
         XCTAssertEqual(game.areaSize.height, 100)
         XCTAssertEqual(game.score, 0)
+        XCTAssertNotNil(game.state)
         XCTAssertNotNil(game.snake)
     }
     
@@ -30,16 +31,16 @@ class SnakeInitializationTests: XCTestCase {
     
     func testInitTail() {
         let snakeDown: Snake = Snake(headPos: CGPoint(x: 10, y: 10), direction: .down, initialSize: 4)
-        XCTAssertEqual(snakeDown.tail, [CGPoint(x: 10, y: 11), CGPoint(x: 10, y: 12), CGPoint(x: 10, y: 13)])
+        XCTAssertEqual(snakeDown.tail, [CGPoint(x: 10, y: 13), CGPoint(x: 10, y: 12), CGPoint(x: 10, y: 11)])
         
         let snakeUp: Snake = Snake(headPos: CGPoint(x: 10, y: 10), direction: .up, initialSize: 4)
-        XCTAssertEqual(snakeUp.tail, [CGPoint(x: 10, y: 9), CGPoint(x: 10, y: 8), CGPoint(x: 10, y: 7)])
+        XCTAssertEqual(snakeUp.tail, [CGPoint(x: 10, y: 7), CGPoint(x: 10, y: 8), CGPoint(x: 10, y: 9)])
         
         let snakeLeft: Snake = Snake(headPos: CGPoint(x: 10, y: 10), direction: .left, initialSize: 4)
-        XCTAssertEqual(snakeLeft.tail, [CGPoint(x: 9, y: 10), CGPoint(x: 8, y: 10), CGPoint(x: 7, y: 10)])
+        XCTAssertEqual(snakeLeft.tail, [CGPoint(x: 7, y: 10), CGPoint(x: 8, y: 10), CGPoint(x: 9, y: 10)])
         
         let snakeRight: Snake = Snake(headPos: CGPoint(x: 10, y: 10), direction: .right, initialSize: 4)
-        XCTAssertEqual(snakeRight.tail, [CGPoint(x: 11, y: 10), CGPoint(x: 12, y: 10), CGPoint(x: 13, y: 10)])
+        XCTAssertEqual(snakeRight.tail, [CGPoint(x: 13, y: 10), CGPoint(x: 12, y: 10), CGPoint(x: 11, y: 10)])
     }
     
     func testMoveDirectionVectors() {

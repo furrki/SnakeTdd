@@ -13,12 +13,14 @@ class Game {
     private(set) var score: Int = 0
     private(set) var snake: Snake
     private(set) var feedPosition: CGPoint
+    private(set) var state: GameState = .running
     
     init(areaSize: CGSize, snake: Snake) {
         self.areaSize = areaSize
         self.snake = snake
         self.feedPosition = CGPoint(x: 0, y: 0)
         self.generateRandomFeed()
+        state = .running
     }
     
     func generateFeed(_ pos: CGPoint) {

@@ -22,7 +22,7 @@ class Snake {
     }
     
      func initTail(initialSize: Int) {
-        for i in 1...(initialSize-1) {
+        for i in (1...(initialSize-1)).reversed() {
             self.tail.append(headPos + direction.getVector() * CGFloat(i))
         }
     }
@@ -34,10 +34,11 @@ class Snake {
     }
     
     func didMovement() {
-        self.lastDirection = self.direction
         self.headPos = self.headPos + self.direction.getVector()
         self.tail = self.tail.map({ (bodyPart) in
             return bodyPart + self.direction.getVector()
         })
+        
+        self.lastDirection = self.direction
     }
 }

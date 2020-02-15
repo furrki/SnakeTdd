@@ -15,6 +15,7 @@
 		FB35D2F423F8841100F71097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB35D2F223F8841100F71097 /* LaunchScreen.storyboard */; };
 		FB35D2FF23F8841100F71097 /* SnakeTddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2FE23F8841100F71097 /* SnakeTddTests.swift */; };
 		FB35D30A23F8841100F71097 /* SnakeTddUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D30923F8841100F71097 /* SnakeTddUITests.swift */; };
+		FB35D31923F8861400F71097 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D31823F8861400F71097 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FB35D30523F8841100F71097 /* SnakeTddUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnakeTddUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB35D30923F8841100F71097 /* SnakeTddUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeTddUITests.swift; sourceTree = "<group>"; };
 		FB35D30B23F8841100F71097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB35D31823F8861400F71097 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,8 @@
 		FB35D2E623F8840D00F71097 /* SnakeTdd */ = {
 			isa = PBXGroup;
 			children = (
-				FB35D31723F8858A00F71097 /* New Group */,
 				FB35D2E723F8840D00F71097 /* AppDelegate.swift */,
+				FB35D31823F8861400F71097 /* Game.swift */,
 				FB35D2E923F8840D00F71097 /* SceneDelegate.swift */,
 				FB35D2EB23F8840D00F71097 /* ContentView.swift */,
 				FB35D2ED23F8841100F71097 /* Assets.xcassets */,
@@ -135,13 +137,6 @@
 				FB35D30B23F8841100F71097 /* Info.plist */,
 			);
 			path = SnakeTddUITests;
-			sourceTree = "<group>";
-		};
-		FB35D31723F8858A00F71097 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +273,7 @@
 				FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */,
 				FB35D2EA23F8840D00F71097 /* SceneDelegate.swift in Sources */,
 				FB35D2EC23F8840D00F71097 /* ContentView.swift in Sources */,
+				FB35D31923F8861400F71097 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +443,7 @@
 				DEVELOPMENT_TEAM = TU6A9VFP8M;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SnakeTdd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,6 +464,7 @@
 				DEVELOPMENT_TEAM = TU6A9VFP8M;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SnakeTdd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

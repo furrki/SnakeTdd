@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2E723F8840D00F71097 /* AppDelegate.swift */; };
+		FB35D2EA23F8840D00F71097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2E923F8840D00F71097 /* SceneDelegate.swift */; };
+		FB35D2EC23F8840D00F71097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2EB23F8840D00F71097 /* ContentView.swift */; };
+		FB35D2EE23F8841100F71097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB35D2ED23F8841100F71097 /* Assets.xcassets */; };
+		FB35D2F123F8841100F71097 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB35D2F023F8841100F71097 /* Preview Assets.xcassets */; };
+		FB35D2F423F8841100F71097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB35D2F223F8841100F71097 /* LaunchScreen.storyboard */; };
+		FB35D2FF23F8841100F71097 /* SnakeTddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2FE23F8841100F71097 /* SnakeTddTests.swift */; };
+		FB35D30A23F8841100F71097 /* SnakeTddUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D30923F8841100F71097 /* SnakeTddUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB35D2FB23F8841100F71097 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB35D2DC23F8840D00F71097 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB35D2E323F8840D00F71097;
+			remoteInfo = SnakeTdd;
+		};
+		FB35D30623F8841100F71097 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB35D2DC23F8840D00F71097 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB35D2E323F8840D00F71097;
+			remoteInfo = SnakeTdd;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FB35D2E423F8840D00F71097 /* SnakeTdd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeTdd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB35D2E723F8840D00F71097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB35D2E923F8840D00F71097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FB35D2EB23F8840D00F71097 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FB35D2ED23F8841100F71097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB35D2F023F8841100F71097 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FB35D2F323F8841100F71097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB35D2F523F8841100F71097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB35D2FA23F8841100F71097 /* SnakeTddTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnakeTddTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB35D2FE23F8841100F71097 /* SnakeTddTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeTddTests.swift; sourceTree = "<group>"; };
+		FB35D30023F8841100F71097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB35D30523F8841100F71097 /* SnakeTddUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnakeTddUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB35D30923F8841100F71097 /* SnakeTddUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeTddUITests.swift; sourceTree = "<group>"; };
+		FB35D30B23F8841100F71097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB35D2E123F8840D00F71097 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB35D2F723F8841100F71097 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB35D30223F8841100F71097 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB35D2DB23F8840D00F71097 = {
+			isa = PBXGroup;
+			children = (
+				FB35D2E623F8840D00F71097 /* SnakeTdd */,
+				FB35D2FD23F8841100F71097 /* SnakeTddTests */,
+				FB35D30823F8841100F71097 /* SnakeTddUITests */,
+				FB35D2E523F8840D00F71097 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB35D2E523F8840D00F71097 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB35D2E423F8840D00F71097 /* SnakeTdd.app */,
+				FB35D2FA23F8841100F71097 /* SnakeTddTests.xctest */,
+				FB35D30523F8841100F71097 /* SnakeTddUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB35D2E623F8840D00F71097 /* SnakeTdd */ = {
+			isa = PBXGroup;
+			children = (
+				FB35D2E723F8840D00F71097 /* AppDelegate.swift */,
+				FB35D2E923F8840D00F71097 /* SceneDelegate.swift */,
+				FB35D2EB23F8840D00F71097 /* ContentView.swift */,
+				FB35D2ED23F8841100F71097 /* Assets.xcassets */,
+				FB35D2F223F8841100F71097 /* LaunchScreen.storyboard */,
+				FB35D2F523F8841100F71097 /* Info.plist */,
+				FB35D2EF23F8841100F71097 /* Preview Content */,
+			);
+			path = SnakeTdd;
+			sourceTree = "<group>";
+		};
+		FB35D2EF23F8841100F71097 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FB35D2F023F8841100F71097 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FB35D2FD23F8841100F71097 /* SnakeTddTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB35D2FE23F8841100F71097 /* SnakeTddTests.swift */,
+				FB35D30023F8841100F71097 /* Info.plist */,
+			);
+			path = SnakeTddTests;
+			sourceTree = "<group>";
+		};
+		FB35D30823F8841100F71097 /* SnakeTddUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FB35D30923F8841100F71097 /* SnakeTddUITests.swift */,
+				FB35D30B23F8841100F71097 /* Info.plist */,
+			);
+			path = SnakeTddUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB35D2E323F8840D00F71097 /* SnakeTdd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB35D30E23F8841100F71097 /* Build configuration list for PBXNativeTarget "SnakeTdd" */;
+			buildPhases = (
+				FB35D2E023F8840D00F71097 /* Sources */,
+				FB35D2E123F8840D00F71097 /* Frameworks */,
+				FB35D2E223F8840D00F71097 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnakeTdd;
+			productName = SnakeTdd;
+			productReference = FB35D2E423F8840D00F71097 /* SnakeTdd.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB35D2F923F8841100F71097 /* SnakeTddTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB35D31123F8841100F71097 /* Build configuration list for PBXNativeTarget "SnakeTddTests" */;
+			buildPhases = (
+				FB35D2F623F8841100F71097 /* Sources */,
+				FB35D2F723F8841100F71097 /* Frameworks */,
+				FB35D2F823F8841100F71097 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB35D2FC23F8841100F71097 /* PBXTargetDependency */,
+			);
+			name = SnakeTddTests;
+			productName = SnakeTddTests;
+			productReference = FB35D2FA23F8841100F71097 /* SnakeTddTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FB35D30423F8841100F71097 /* SnakeTddUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB35D31423F8841100F71097 /* Build configuration list for PBXNativeTarget "SnakeTddUITests" */;
+			buildPhases = (
+				FB35D30123F8841100F71097 /* Sources */,
+				FB35D30223F8841100F71097 /* Frameworks */,
+				FB35D30323F8841100F71097 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB35D30723F8841100F71097 /* PBXTargetDependency */,
+			);
+			name = SnakeTddUITests;
+			productName = SnakeTddUITests;
+			productReference = FB35D30523F8841100F71097 /* SnakeTddUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB35D2DC23F8840D00F71097 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Furkan Kaynar";
+				TargetAttributes = {
+					FB35D2E323F8840D00F71097 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					FB35D2F923F8841100F71097 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = FB35D2E323F8840D00F71097;
+					};
+					FB35D30423F8841100F71097 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = FB35D2E323F8840D00F71097;
+					};
+				};
+			};
+			buildConfigurationList = FB35D2DF23F8840D00F71097 /* Build configuration list for PBXProject "SnakeTdd" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB35D2DB23F8840D00F71097;
+			productRefGroup = FB35D2E523F8840D00F71097 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB35D2E323F8840D00F71097 /* SnakeTdd */,
+				FB35D2F923F8841100F71097 /* SnakeTddTests */,
+				FB35D30423F8841100F71097 /* SnakeTddUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB35D2E223F8840D00F71097 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB35D2F423F8841100F71097 /* LaunchScreen.storyboard in Resources */,
+				FB35D2F123F8841100F71097 /* Preview Assets.xcassets in Resources */,
+				FB35D2EE23F8841100F71097 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB35D2F823F8841100F71097 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB35D30323F8841100F71097 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB35D2E023F8840D00F71097 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */,
+				FB35D2EA23F8840D00F71097 /* SceneDelegate.swift in Sources */,
+				FB35D2EC23F8840D00F71097 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB35D2F623F8841100F71097 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB35D2FF23F8841100F71097 /* SnakeTddTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB35D30123F8841100F71097 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB35D30A23F8841100F71097 /* SnakeTddUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB35D2FC23F8841100F71097 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB35D2E323F8840D00F71097 /* SnakeTdd */;
+			targetProxy = FB35D2FB23F8841100F71097 /* PBXContainerItemProxy */;
+		};
+		FB35D30723F8841100F71097 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB35D2E323F8840D00F71097 /* SnakeTdd */;
+			targetProxy = FB35D30623F8841100F71097 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB35D2F223F8841100F71097 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB35D2F323F8841100F71097 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB35D30C23F8841100F71097 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB35D30D23F8841100F71097 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB35D30F23F8841100F71097 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SnakeTdd/Preview Content\"";
+				DEVELOPMENT_TEAM = TU6A9VFP8M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SnakeTdd/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = furrki.SnakeTdd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB35D31023F8841100F71097 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SnakeTdd/Preview Content\"";
+				DEVELOPMENT_TEAM = TU6A9VFP8M;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SnakeTdd/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = furrki.SnakeTdd;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FB35D31223F8841100F71097 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TU6A9VFP8M;
+				INFOPLIST_FILE = SnakeTddTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = furrki.SnakeTddTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnakeTdd.app/SnakeTdd";
+			};
+			name = Debug;
+		};
+		FB35D31323F8841100F71097 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TU6A9VFP8M;
+				INFOPLIST_FILE = SnakeTddTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = furrki.SnakeTddTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnakeTdd.app/SnakeTdd";
+			};
+			name = Release;
+		};
+		FB35D31523F8841100F71097 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TU6A9VFP8M;
+				INFOPLIST_FILE = SnakeTddUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = furrki.SnakeTddUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SnakeTdd;
+			};
+			name = Debug;
+		};
+		FB35D31623F8841100F71097 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TU6A9VFP8M;
+				INFOPLIST_FILE = SnakeTddUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = furrki.SnakeTddUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SnakeTdd;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB35D2DF23F8840D00F71097 /* Build configuration list for PBXProject "SnakeTdd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB35D30C23F8841100F71097 /* Debug */,
+				FB35D30D23F8841100F71097 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB35D30E23F8841100F71097 /* Build configuration list for PBXNativeTarget "SnakeTdd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB35D30F23F8841100F71097 /* Debug */,
+				FB35D31023F8841100F71097 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB35D31123F8841100F71097 /* Build configuration list for PBXNativeTarget "SnakeTddTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB35D31223F8841100F71097 /* Debug */,
+				FB35D31323F8841100F71097 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB35D31423F8841100F71097 /* Build configuration list for PBXNativeTarget "SnakeTddUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB35D31523F8841100F71097 /* Debug */,
+				FB35D31623F8841100F71097 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB35D2DC23F8840D00F71097 /* Project object */;
+}

@@ -11,6 +11,7 @@ import CoreGraphics
 class Game {
     private(set) var speed: Int
     private(set) var areaSize: CGSize
+    private(set) var score: Int = 0
     
     init(speed: Int, areaSize: CGSize) {
         self.speed = speed

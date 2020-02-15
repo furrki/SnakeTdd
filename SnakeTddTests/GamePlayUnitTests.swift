@@ -18,7 +18,6 @@ class GamePlayUnitTests: XCTestCase {
        
         XCTAssertEqual(game.feedPosition.x, 50)
         XCTAssertEqual(game.feedPosition.y, 50)
-        
     }
     
     func testRandomFeedGeneration() {

@@ -16,6 +16,9 @@
 		FB35D2FF23F8841100F71097 /* SnakeTddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2FE23F8841100F71097 /* SnakeTddTests.swift */; };
 		FB35D30A23F8841100F71097 /* SnakeTddUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D30923F8841100F71097 /* SnakeTddUITests.swift */; };
 		FB35D31923F8861400F71097 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D31823F8861400F71097 /* Game.swift */; };
+		FB35D31B23F88E5300F71097 /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D31A23F88E5300F71097 /* Snake.swift */; };
+		FB35D31D23F88EF300F71097 /* MoveDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D31C23F88EF300F71097 /* MoveDirection.swift */; };
+		FB35D31F23F8928B00F71097 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D31E23F8928B00F71097 /* CGPoint+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		FB35D30923F8841100F71097 /* SnakeTddUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeTddUITests.swift; sourceTree = "<group>"; };
 		FB35D30B23F8841100F71097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB35D31823F8861400F71097 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FB35D31A23F88E5300F71097 /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
+		FB35D31C23F88EF300F71097 /* MoveDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDirection.swift; sourceTree = "<group>"; };
+		FB35D31E23F8928B00F71097 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +108,10 @@
 			isa = PBXGroup;
 			children = (
 				FB35D2E723F8840D00F71097 /* AppDelegate.swift */,
+				FB35D31E23F8928B00F71097 /* CGPoint+Extensions.swift */,
 				FB35D31823F8861400F71097 /* Game.swift */,
+				FB35D31A23F88E5300F71097 /* Snake.swift */,
+				FB35D31C23F88EF300F71097 /* MoveDirection.swift */,
 				FB35D2E923F8840D00F71097 /* SceneDelegate.swift */,
 				FB35D2EB23F8840D00F71097 /* ContentView.swift */,
 				FB35D2ED23F8841100F71097 /* Assets.xcassets */,
@@ -270,8 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB35D31F23F8928B00F71097 /* CGPoint+Extensions.swift in Sources */,
+				FB35D31D23F88EF300F71097 /* MoveDirection.swift in Sources */,
 				FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */,
 				FB35D2EA23F8840D00F71097 /* SceneDelegate.swift in Sources */,
+				FB35D31B23F88E5300F71097 /* Snake.swift in Sources */,
 				FB35D2EC23F8840D00F71097 /* ContentView.swift in Sources */,
 				FB35D31923F8861400F71097 /* Game.swift in Sources */,
 			);

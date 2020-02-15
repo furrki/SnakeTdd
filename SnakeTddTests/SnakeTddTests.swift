@@ -25,6 +25,25 @@ class SnakeInitializationTests: XCTestCase {
         XCTAssertEqual(snake.headPos.y, 10)
         XCTAssertEqual(snake.direction, .down)
         XCTAssertEqual(snake.tail.count, 3)
-        XCTAssertEqual(snake.tail, [CGPoint(x: 10, y: 9), CGPoint(x: 10, y: 8), CGPoint(x: 10, y: 7)])
+    }
+    
+    func testInitTail() {
+        let snakeDown: Snake = Snake(headPos: CGPoint(x: 10, y: 10), direction: .down, initialSize: 4)
+        XCTAssertEqual(snakeDown.tail, [CGPoint(x: 10, y: 9), CGPoint(x: 10, y: 8), CGPoint(x: 10, y: 7)])
+        
+        let snakeUp: Snake = Snake(headPos: CGPoint(x: 10, y: 10), direction: .up, initialSize: 4)
+        XCTAssertEqual(snakeUp.tail, [CGPoint(x: 10, y: 11), CGPoint(x: 10, y: 12), CGPoint(x: 10, y: 13)])
+        
+        let snakeLeft: Snake = Snake(headPos: CGPoint(x: 10, y: 10), direction: .left, initialSize: 4)
+        XCTAssertEqual(snakeLeft.tail, [CGPoint(x: 9, y: 10), CGPoint(x: 8, y: 10), CGPoint(x: 7, y: 10)])
+        
+        let snakeRight: Snake = Snake(headPos: CGPoint(x: 10, y: 10), direction: .right, initialSize: 4)
+        XCTAssertEqual(snakeRight.tail, [CGPoint(x: 11, y: 10), CGPoint(x: 12, y: 10), CGPoint(x: 13, y: 10)])
+    }
+    
+    func testMoveDirectionVectors() {
+        let direction: MoveDirection = .up
+        let position: CGPoint = CGPoint(x: 50, y: 50)
+        XCTAssertEqual(position + direction.getVector(), CGPoint(x: 50, y: 49))
     }
 }

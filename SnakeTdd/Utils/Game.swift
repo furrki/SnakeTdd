@@ -37,5 +37,20 @@ class Game {
     
     func doMovement() {
         snake.didMovement()
+        if checkCollision() {
+            state = .crash
+        } else {
+            if snake.headPos == feedPosition {
+                state = .eat
+            } else if state == .eat {
+                state = .running
+            }
+        }
+    }
+    
+    func checkCollision() -> Bool {
+        return  (snake.headPos.x < 0 || snake.headPos.x >= areaSize.width) ||
+                (snake.headPos.y < 0 || snake.headPos.y >= areaSize.height) ||
+                snake.tail.contains(snake.headPos)
     }
 }

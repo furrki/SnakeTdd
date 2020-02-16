@@ -27,6 +27,7 @@
 		FB35D33023F93F9100F71097 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D32F23F93F9100F71097 /* HomeView.swift */; };
 		FB35D33223F9402A00F71097 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D33123F9402A00F71097 /* GameView.swift */; };
 		FB35D33523F9403B00F71097 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D33423F9403B00F71097 /* GameViewModel.swift */; };
+		FB35D33723F9503300F71097 /* SwipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D33623F9503300F71097 /* SwipeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		FB35D32F23F93F9100F71097 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FB35D33123F9402A00F71097 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		FB35D33423F9403B00F71097 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		FB35D33623F9503300F71097 /* SwipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				FB35D32423F89EFD00F71097 /* MovementTests.swift */,
 				FB35D32B23F8B40A00F71097 /* GameSituationTests.swift */,
 				FB35D32923F8AD5800F71097 /* GameFeedTests.swift */,
+				FB35D33623F9503300F71097 /* SwipeTests.swift */,
 				FB35D30023F8841100F71097 /* Info.plist */,
 			);
 			path = SnakeTddTests;
@@ -364,6 +367,7 @@
 			files = (
 				FB35D32C23F8B40A00F71097 /* GameSituationTests.swift in Sources */,
 				FB35D2FF23F8841100F71097 /* SnakeInitializationTests.swift in Sources */,
+				FB35D33723F9503300F71097 /* SwipeTests.swift in Sources */,
 				FB35D32523F89EFD00F71097 /* MovementTests.swift in Sources */,
 				FB35D32A23F8AD5800F71097 /* GameFeedTests.swift in Sources */,
 			);

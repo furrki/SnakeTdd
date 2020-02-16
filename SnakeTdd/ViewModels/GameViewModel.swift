@@ -9,5 +9,7 @@
 import Foundation
 
 class GameViewModel {
-    
+    func swipe(_ direction: MoveDirection) {
+        print(direction)
+    }
 }

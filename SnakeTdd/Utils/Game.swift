@@ -41,13 +41,15 @@ class Game {
         } else {
             if snake.futureHeadPos == feedPosition {
                 state = .eat
+                snake.didMovement(isEating: true)
+                score = score + 1
+                 generateRandomFeed()
             } else if state == .eat {
                 state = .running
+                snake.didMovement(isEating: false)
+            } else {
+                snake.didMovement(isEating: false)
             }
-        }
-        snake.didMovement(isEating: state == .eat)
-        if state == .eat {
-            generateRandomFeed()
         }
     }
     

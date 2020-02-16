@@ -10,6 +10,7 @@ import SwiftUI
 
 struct GameView: View {
     @ObservedObject var viewModel: GameViewModel = GameViewModel()
+    @Environment(\.presentationMode) var presentationMode
     
     let SWIPE_TRESHOLD: CGFloat = 70.0
     
@@ -43,6 +44,12 @@ struct GameView: View {
             .navigationBarHidden(true)
             .onAppear {
                 self.viewModel.startGame()
+        }.onReceive(viewModel.objectWillChange) { _ in
+            if self.viewModel.game.state == .crash {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                    self.presentationMode.wrappedValue.dismiss()
+                })
+            }
         }
     }
     

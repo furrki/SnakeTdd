@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var isActive: Bool = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -17,22 +19,22 @@ struct HomeView: View {
                     Spacer().frame(height: -80)
                     Text("Snake").font(Font.system(size: 35, weight: .semibold, design: Font.Design.rounded)).multilineTextAlignment(.center)
                     Spacer().frame(height: 30)
-                    NavigationLink(destination: GameView()) {
+                    NavigationLink(destination: GameView(), isActive: self.$isActive) {
                         Text("Start Game")
                             .frame(width: 200, height: 50, alignment: .center)
                             .background(Color.init(red: 241.0 / 255.0, green: 196.0 / 255.0, blue: 15 / 255.0))
                             .foregroundColor(Color.init(red: 44.0 / 255.0, green: 62.0 / 255.0, blue: 80.0 / 255.0))
                             .cornerRadius(30)
-                        
+                    }.onTapGesture {
+                        self.isActive = true
                     }
                 }
-                
             }
-                
-                
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
             .navigationBarTitle(Text(""), displayMode: .inline)
-        
+            .onAppear {
+                self.isActive = false
+        }
     }
 }
 

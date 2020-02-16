@@ -1,0 +1,6 @@
+framework module Pods_SnakeTdd {
+  umbrella header "Pods-SnakeTdd-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -36,21 +36,22 @@ class Game {
     }
     
     func doMovement() {
-        snake.didMovement()
-        if checkCollision() {
+        if checkNextCollision() {
             state = .crash
         } else {
-            if snake.headPos == feedPosition {
+            if snake.futureHeadPos == feedPosition {
                 state = .eat
             } else if state == .eat {
                 state = .running
             }
         }
+        snake.didMovement(isEating: state == .eat)
     }
     
-    func checkCollision() -> Bool {
-        return  (snake.headPos.x < 0 || snake.headPos.x >= areaSize.width) ||
-                (snake.headPos.y < 0 || snake.headPos.y >= areaSize.height) ||
-                snake.tail.contains(snake.headPos)
+    func checkNextCollision() -> Bool {
+        let futureHeadPos: CGPoint = snake.futureHeadPos
+        return  (futureHeadPos.x < 0 || futureHeadPos.x >= areaSize.width) ||
+                (futureHeadPos.y < 0 || futureHeadPos.y >= areaSize.height) ||
+                snake.futureTail.contains(futureHeadPos)
     }
 }

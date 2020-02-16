@@ -18,8 +18,8 @@ class GameSituationTests: XCTestCase {
         game.doMovement()
         XCTAssertEqual(game.state, .eat)
         XCTAssertEqual(game.snake.tail, [
-            CGPoint(x: 12, y: 15),
-            CGPoint(x: 13, y: 15),
+        CGPoint(x: 12, y: 15),
+        CGPoint(x: 13, y: 15),
             CGPoint(x: 14, y: 15),
             CGPoint(x: 15, y: 15),
         ])

@@ -101,15 +101,4 @@ class MovementTests: XCTestCase {
         XCTAssertEqual(game.snake.lastDirection, .left)
     }
     
-    func testSnakeEat() {
-        let game: Game = makeGame()
-        game.snake.didMovement()
-        game.snake.eat()
-        XCTAssertEqual(game.snake.tail, [
-            CGPoint(x: 12, y: 15),
-            CGPoint(x: 13, y: 15),
-            CGPoint(x: 14, y: 15),
-            CGPoint(x: 15, y: 15),
-        ])
-    }
 }

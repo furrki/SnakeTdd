@@ -14,6 +14,22 @@ class Snake {
     private(set) var lastDirection: MoveDirection
     private(set) var tail: [CGPoint] = []
     
+    var futureHeadPos: CGPoint {
+        return self.headPos + self.direction.getVector()
+    }
+    
+    var futureTail: [CGPoint] {
+        var nextTail: [CGPoint] = self.tail
+        for (i, _) in self.tail.enumerated() {
+            if i != self.tail.count-1 {
+                nextTail[i] = self.tail[i + 1]
+            } else {
+                nextTail[i] = self.headPos
+            }
+        }
+        return nextTail
+    }
+    
     init(headPos: CGPoint, direction: MoveDirection, initialSize: Int) {
         self.headPos = headPos
         self.direction = direction
@@ -33,12 +49,16 @@ class Snake {
         }
     }
     
-    func didMovement() {
-        for (i, _) in self.tail.enumerated() {
-            if i != self.tail.count-1 {
-                self.tail[i] = self.tail[i + 1]
-            } else {
-                self.tail[i] = self.headPos
+    func didMovement(isEating: Bool = false) {
+        if isEating {
+            self.tail.append(self.headPos)
+        } else {
+            for (i, _) in self.tail.enumerated() {
+                if i != self.tail.count-1 {
+                    self.tail[i] = self.tail[i + 1]
+                } else {
+                    self.tail[i] = self.headPos
+                }
             }
         }
         self.headPos = self.headPos + self.direction.getVector()

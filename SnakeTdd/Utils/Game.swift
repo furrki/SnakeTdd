@@ -46,6 +46,9 @@ class Game {
             }
         }
         snake.didMovement(isEating: state == .eat)
+        if state == .eat {
+            generateRandomFeed()
+        }
     }
     
     func checkNextCollision() -> Bool {

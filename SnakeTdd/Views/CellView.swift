@@ -16,8 +16,10 @@ struct CellView: View {
     }
     
     var body: some View {
-        self.cellType.getColor()
+        Rectangle()
+        .fill(self.cellType.getColor())
             .fixedSize()
-            .frame(width: 10, height: 10, alignment: .center)
+            .frame(width: 20, height: 20, alignment: .center)
+            .background(self.cellType.getColor())
     }
 }

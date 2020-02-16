@@ -10,13 +10,26 @@ import Foundation
 import CoreGraphics
 import Combine
 
-class GameViewModel {
-    var game: Game
+class GameViewModel: ObservableObject {
+    @Published var game: Game
+    var gameTimer: Timer?
     let objectWillChange = PassthroughSubject<Void, Never>()
     
+    let FPS: Double = 6.0
+    
+    deinit {
+        gameTimer?.invalidate()
+    }
+    
     init() {
-        let snake: Snake = Snake(headPos: CGPoint(x: 20, y: 20), direction: .right, initialSize: 4)
-        game = Game(areaSize: CGSize(width: 30, height: 30), snake: snake)
+        let snake: Snake = Snake(headPos: CGPoint(x: 4, y: 4), direction: .right, initialSize: 4)
+        game = Game(areaSize: CGSize(width: 15, height: 15), snake: snake)
+    }
+    
+    func startGame() {
+        gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0/FPS, repeats: true, block: { [weak self] _ in
+            self?.update()
+        })
     }
     
     func swipe(_ direction: MoveDirection) {
@@ -35,6 +48,11 @@ class GameViewModel {
     
     func update() {
         game.doMovement()
+        
+        if game.state == .crash {
+            gameTimer?.invalidate()
+        }
         objectWillChange.send()
     }
 }
+

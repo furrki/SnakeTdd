@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct GameView: View {
-    var viewModel: GameViewModel = GameViewModel()
+    @ObservedObject var viewModel: GameViewModel = GameViewModel()
     
     let SWIPE_TRESHOLD: CGFloat = 70.0
     
@@ -22,9 +22,9 @@ struct GameView: View {
                     Spacer().frame(height: 20)
                     
                     VStack(alignment: .center, spacing: 0.5) {
-                        ForEach(0..<Int(viewModel.game.areaSize.width)) { i in
+                        ForEach(0..<Int(viewModel.game.areaSize.height)) { j in
                             HStack(alignment: .center, spacing: 0.5) {
-                                ForEach(0..<Int(self.viewModel.game.areaSize.height)) { j in
+                                ForEach(0..<Int(self.viewModel.game.areaSize.width)) { i in
                                     CellView(cellType: self.viewModel.getCellType(i, j))
                                 }
                             }
@@ -41,7 +41,9 @@ struct GameView: View {
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
             .navigationBarTitle("Snake", displayMode: .inline)
             .navigationBarHidden(true)
-        
+            .onAppear {
+                self.viewModel.startGame()
+        }
     }
     
     func swiped(_ value: CGSize) -> MoveDirection? {

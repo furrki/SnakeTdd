@@ -41,20 +41,15 @@ class MovementTests: XCTestCase {
         let game: Game = Game(areaSize: CGSize(width: 150, height: 150), snake: snake)
         
         game.generateFeed(CGPoint(x: 100, y: 100))
-        
-        print(snake.tail, snake.headPos)
         game.doMovement()
         XCTAssertEqual(game.snake.tail, [
             CGPoint(x: 13, y: 15),
             CGPoint(x: 14, y: 15),
             CGPoint(x: 15, y: 15),
         ])
-        print(snake.tail, snake.headPos)
         game.snake.setDirection(.down)
         game.doMovement()
-        print(snake.tail, snake.headPos)
         game.doMovement()
-        print(snake.tail, snake.headPos)
         XCTAssertEqual(game.snake.tail, [
             CGPoint(x: 15, y: 15),
             CGPoint(x: 16, y: 15),

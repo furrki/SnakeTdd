@@ -18,7 +18,13 @@ class GameSituationTests: XCTestCase {
         game.doMovement()
         XCTAssertEqual(game.state, .eat)
         game.doMovement()
-        XCTAssertEqual(game.snake.tail.count, 5)
+        XCTAssertEqual(game.snake.tail, [
+            CGPoint(x: 13, y: 15),
+            CGPoint(x: 14, y: 15),
+            CGPoint(x: 15, y: 15),
+            CGPoint(x: 16, y: 15),
+        ])
+        XCTAssertEqual(game.snake.headPos, CGPoint(x: 17, y: 15))
     }
     
     func testDetailedEating() {
@@ -31,25 +37,6 @@ class GameSituationTests: XCTestCase {
         game.snake.setDirection(.down)
         game.doMovement()
         game.doMovement()
-//        XCTAssertEqual(game.snake.tail.count, 6)
-        print(snake.tail)
-        XCTAssertEqual(game.snake.tail, [
-            CGPoint(x: 16, y: 16),
-            CGPoint(x: 16, y: 15),
-            CGPoint(x: 15, y: 16),
-            CGPoint(x: 16, y: 15),
-        ])
-        XCTAssertEqual(game.snake.headPos, CGPoint(x: 16, y: 17))
-        game.doMovement()
-        XCTAssertEqual(game.snake.headPos, CGPoint(x: 16, y: 18))
-        XCTAssertEqual(game.snake.tail, [
-            CGPoint(x: 16, y: 17),
-            CGPoint(x: 16, y: 16),
-            CGPoint(x: 16, y: 15),
-            CGPoint(x: 15, y: 16),
-            CGPoint(x: 16, y: 15),
-        ])
-        
     }
     
     func testCollisionWithWall() {

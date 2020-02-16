@@ -11,32 +11,46 @@ import XCTest
 
 class GameSituationTests: XCTestCase {
     func testEating() {
-        let snake: Snake = Snake(headPos: CGPoint(x: 15, y: 15), direction: .right, initialSize: 5)
-        let game: Game = Game(areaSize: CGSize(width: 150, height: 150), snake: snake)
-        
-        game.generateFeed(CGPoint(x: 16, y: 15))
-        game.doMovement()
-        XCTAssertEqual(game.state, .eat)
-        game.doMovement()
-        XCTAssertEqual(game.snake.tail, [
-            CGPoint(x: 13, y: 15),
-            CGPoint(x: 14, y: 15),
-            CGPoint(x: 15, y: 15),
-            CGPoint(x: 16, y: 15),
-        ])
-        XCTAssertEqual(game.snake.headPos, CGPoint(x: 17, y: 15))
-    }
-    
-    func testDetailedEating() {
         let snake: Snake = Snake(headPos: CGPoint(x: 15, y: 15), direction: .right, initialSize: 4)
         let game: Game = Game(areaSize: CGSize(width: 150, height: 150), snake: snake)
         
         game.generateFeed(CGPoint(x: 16, y: 15))
         game.doMovement()
-        game.generateFeed(CGPoint(x: 16, y: 17))
+        XCTAssertEqual(game.state, .eat)
+        XCTAssertEqual(game.snake.tail, [
+            CGPoint(x: 12, y: 15),
+            CGPoint(x: 13, y: 15),
+            CGPoint(x: 14, y: 15),
+            CGPoint(x: 15, y: 15),
+        ])
+
+    }
+    
+    func testComplexEating() {
+        let snake: Snake = Snake(headPos: CGPoint(x: 15, y: 15), direction: .right, initialSize: 4)
+        let game: Game = Game(areaSize: CGSize(width: 150, height: 150), snake: snake)
+        
+        game.generateFeed(CGPoint(x: 16, y: 15))
+        
+        game.doMovement()
+        XCTAssertEqual(game.snake.tail, [
+            CGPoint(x: 12, y: 15),
+            CGPoint(x: 13, y: 15),
+            CGPoint(x: 14, y: 15),
+            CGPoint(x: 15, y: 15),
+        ])
+        XCTAssertEqual(game.snake.headPos, CGPoint(x: 16, y: 15))
+        
         game.snake.setDirection(.down)
         game.doMovement()
         game.doMovement()
+        
+        XCTAssertEqual(game.snake.tail, [
+            CGPoint(x: 14, y: 15),
+            CGPoint(x: 15, y: 15),
+            CGPoint(x: 16, y: 15),
+            CGPoint(x: 16, y: 16),
+        ])
     }
     
     func testCollisionWithWall() {

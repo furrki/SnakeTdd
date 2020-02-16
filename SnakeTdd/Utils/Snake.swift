@@ -53,13 +53,7 @@ class Snake {
         if isEating {
             self.tail.append(self.headPos)
         } else {
-            for (i, _) in self.tail.enumerated() {
-                if i != self.tail.count-1 {
-                    self.tail[i] = self.tail[i + 1]
-                } else {
-                    self.tail[i] = self.headPos
-                }
-            }
+            self.tail = self.futureTail
         }
         self.headPos = self.headPos + self.direction.getVector()
         self.lastDirection = self.direction

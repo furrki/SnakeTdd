@@ -18,12 +18,25 @@ struct GameView: View {
             ZStack(alignment: .center) {
                 Color.init(red: 41.0 / 255.0, green: 128.0 / 255.0, blue: 185.0 / 255.0)
                     .edgesIgnoringSafeArea(.all)
+                VStack {
+                    Spacer().frame(height: 20)
+                    
+                    VStack(alignment: .center, spacing: 0.5) {
+                        ForEach(0..<Int(viewModel.game.areaSize.width)) { i in
+                            HStack(alignment: .center, spacing: 0.5) {
+                                ForEach(0..<Int(self.viewModel.game.areaSize.height)) { j in
+                                    CellView(cellType: self.viewModel.getCellType(i, j))
+                                }
+                            }
+                        }
+                    }.background(Color.black).padding(5).cornerRadius(6.0)
+                    
+                    Spacer().frame(height: 20)
+                }
             }
-            
             .gesture(DragGesture().onEnded { (value) in
                 let _ = self.swiped(value.translation)
             })
-                
             
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
             .navigationBarTitle("Snake", displayMode: .inline)

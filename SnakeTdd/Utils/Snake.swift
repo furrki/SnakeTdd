@@ -21,7 +21,7 @@ class Snake {
     var futureTail: [CGPoint] {
         var nextTail: [CGPoint] = self.tail
         for (i, _) in self.tail.enumerated() {
-            if i != self.tail.count-1 {
+            if i != self.tail.count - 1 {
                 nextTail[i] = self.tail[i + 1]
             } else {
                 nextTail[i] = self.headPos

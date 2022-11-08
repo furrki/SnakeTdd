@@ -23,7 +23,7 @@ class GameViewModel: ObservableObject {
     
     init() {
         let snake: Snake = Snake(headPos: CGPoint(x: 4, y: 4), direction: .right, initialSize: 4)
-        game = Game(areaSize: CGSize(width: 15, height: 15), snake: snake)
+        game = Game(areaSize: CGSize(width: 15.0, height: 15.0), snake: snake)
     }
     
     func startGame() {
@@ -37,8 +37,10 @@ class GameViewModel: ObservableObject {
     }
     
     func getCellType(_ i: Int, _ j: Int) -> CellType {
-        if game.snake.tail.contains(CGPoint(x: i, y: j)) || game.snake.headPos == CGPoint(x: i, y: j) {
+        if game.snake.tail.contains(CGPoint(x: i, y: j)) {
             return .snake
+        } else if game.snake.headPos == CGPoint(x: i, y: j) {
+            return .snakeHead
         } else if game.feedPosition == CGPoint(x: i, y: j) {
             return .feed
         } else {

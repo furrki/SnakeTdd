@@ -6,6 +6,7 @@ target 'SnakeTdd' do
   use_frameworks!
 
   # Pods for SnakeTdd
+  pod 'R.swift'
 
   target 'SnakeTddTests' do
     inherit! :search_paths

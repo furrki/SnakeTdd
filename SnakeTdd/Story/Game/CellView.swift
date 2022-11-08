@@ -17,9 +17,20 @@ struct CellView: View {
     
     var body: some View {
         Rectangle()
-        .fill(self.cellType.getColor())
             .fixedSize()
             .frame(width: 20, height: 20, alignment: .center)
             .background(self.cellType.getColor())
+            .foregroundColor(self.cellType.getColor())
+    }
+}
+
+struct CellView_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack(alignment: .center, spacing: 0) {
+            CellView(cellType: .snake)
+            CellView(cellType: .snakeHead)
+            CellView(cellType: .empty)
+            CellView(cellType: .feed)
+        }
     }
 }

@@ -3,13 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2539E110306084329377849E /* Pods_SnakeTdd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 761D9F4A010599B3A437886F /* Pods_SnakeTdd.framework */; };
 		AAE60D339D182D2EBAD5209D /* Pods_SnakeTddTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1658A69A03F5018B3C50AC /* Pods_SnakeTddTests.framework */; };
 		B62D20DB058DB3A0FB702A38 /* Pods_SnakeTdd_SnakeTddUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AA75DFD1CCBCBD189FDC89 /* Pods_SnakeTdd_SnakeTddUITests.framework */; };
+		FB105A2F291AE6280095C324 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB105A2E291AE6280095C324 /* Colors.xcassets */; };
+		FB105A32291AE8060095C324 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB105A31291AE8060095C324 /* R.generated.swift */; };
+		FB105A34291AF0A50095C324 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB105A33291AF0A50095C324 /* Coordinator.swift */; };
+		FB105A39291AF12A0095C324 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB105A38291AF12A0095C324 /* HomeCoordinator.swift */; };
 		FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2E723F8840D00F71097 /* AppDelegate.swift */; };
 		FB35D2EA23F8840D00F71097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2E923F8840D00F71097 /* SceneDelegate.swift */; };
 		FB35D2EC23F8840D00F71097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2EB23F8840D00F71097 /* ContentView.swift */; };
@@ -62,6 +66,10 @@
 		AA1658A69A03F5018B3C50AC /* Pods_SnakeTddTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnakeTddTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAA6A22EC59883870A8B2F1 /* Pods-SnakeTdd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnakeTdd.debug.xcconfig"; path = "Target Support Files/Pods-SnakeTdd/Pods-SnakeTdd.debug.xcconfig"; sourceTree = "<group>"; };
 		F456F40B981F7B502B1C2D8A /* Pods-SnakeTddTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnakeTddTests.release.xcconfig"; path = "Target Support Files/Pods-SnakeTddTests/Pods-SnakeTddTests.release.xcconfig"; sourceTree = "<group>"; };
+		FB105A2E291AE6280095C324 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		FB105A31291AE8060095C324 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		FB105A33291AF0A50095C324 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FB105A38291AF12A0095C324 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		FB35D2E423F8840D00F71097 /* SnakeTdd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeTdd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB35D2E723F8840D00F71097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB35D2E923F8840D00F71097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +152,43 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FB105A2D291AE6120095C324 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FB35D2ED23F8841100F71097 /* Assets.xcassets */,
+				FB105A2E291AE6280095C324 /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FB105A35291AF0D50095C324 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				FB105A37291AF0E10095C324 /* Game */,
+				FB105A36291AF0DD0095C324 /* Home */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
+		FB105A36291AF0DD0095C324 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FB35D32F23F93F9100F71097 /* HomeView.swift */,
+				FB105A38291AF12A0095C324 /* HomeCoordinator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FB105A37291AF0E10095C324 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				FB35D33323F9402E00F71097 /* ViewModels */,
+				FB35D33123F9402A00F71097 /* GameView.swift */,
+				FB35D33823F973FF00F71097 /* CellView.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		FB35D2DB23F8840D00F71097 = {
 			isa = PBXGroup;
 			children = (
@@ -169,16 +214,16 @@
 		FB35D2E623F8840D00F71097 /* SnakeTdd */ = {
 			isa = PBXGroup;
 			children = (
+				FB105A35291AF0D50095C324 /* Story */,
 				FB35D32623F8AA9D00F71097 /* Enums */,
 				FB35D32223F8941F00F71097 /* Extensions */,
+				FB105A2D291AE6120095C324 /* Resources */,
 				FB35D32323F8942700F71097 /* Utils */,
-				FB35D32E23F93F7900F71097 /* Views */,
-				FB35D33323F9402E00F71097 /* ViewModels */,
 				FB35D2E723F8840D00F71097 /* AppDelegate.swift */,
 				FB35D2E923F8840D00F71097 /* SceneDelegate.swift */,
 				FB35D2EB23F8840D00F71097 /* ContentView.swift */,
-				FB35D2ED23F8841100F71097 /* Assets.xcassets */,
 				FB35D2F223F8841100F71097 /* LaunchScreen.storyboard */,
+				FB105A31291AE8060095C324 /* R.generated.swift */,
 				FB35D2F523F8841100F71097 /* Info.plist */,
 				FB35D2EF23F8841100F71097 /* Preview Content */,
 			);
@@ -229,6 +274,7 @@
 			children = (
 				FB35D31823F8861400F71097 /* Game.swift */,
 				FB35D31A23F88E5300F71097 /* Snake.swift */,
+				FB105A33291AF0A50095C324 /* Coordinator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -241,16 +287,6 @@
 				FB35D33A23F9756F00F71097 /* CellType.swift */,
 			);
 			path = Enums;
-			sourceTree = "<group>";
-		};
-		FB35D32E23F93F7900F71097 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				FB35D32F23F93F9100F71097 /* HomeView.swift */,
-				FB35D33123F9402A00F71097 /* GameView.swift */,
-				FB35D33823F973FF00F71097 /* CellView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		FB35D33323F9402E00F71097 /* ViewModels */ = {
@@ -269,9 +305,11 @@
 			buildConfigurationList = FB35D30E23F8841100F71097 /* Build configuration list for PBXNativeTarget "SnakeTdd" */;
 			buildPhases = (
 				75FA327D93A0F522BBA0B87B /* [CP] Check Pods Manifest.lock */,
+				FB105A30291AE7230095C324 /* R.swift */,
 				FB35D2E023F8840D00F71097 /* Sources */,
 				FB35D2E123F8840D00F71097 /* Frameworks */,
 				FB35D2E223F8840D00F71097 /* Resources */,
+				1FB6DF6BB0CCED9226A86D7A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +347,7 @@
 				FB35D30123F8841100F71097 /* Sources */,
 				FB35D30223F8841100F71097 /* Frameworks */,
 				FB35D30323F8841100F71097 /* Resources */,
+				EE2B337BBCA84F9599A0BC1F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB35D2F423F8841100F71097 /* LaunchScreen.storyboard in Resources */,
+				FB105A2F291AE6280095C324 /* Colors.xcassets in Resources */,
 				FB35D2F123F8841100F71097 /* Preview Assets.xcassets in Resources */,
 				FB35D2EE23F8841100F71097 /* Assets.xcassets in Resources */,
 			);
@@ -391,6 +431,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1FB6DF6BB0CCED9226A86D7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SnakeTdd/Pods-SnakeTdd-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SnakeTdd/Pods-SnakeTdd-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SnakeTdd/Pods-SnakeTdd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		75FA327D93A0F522BBA0B87B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -457,6 +514,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EE2B337BBCA84F9599A0BC1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SnakeTdd-SnakeTddUITests/Pods-SnakeTdd-SnakeTddUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SnakeTdd-SnakeTddUITests/Pods-SnakeTdd-SnakeTddUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SnakeTdd-SnakeTddUITests/Pods-SnakeTdd-SnakeTddUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB105A30291AE7230095C324 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/SnakeTdd/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -464,8 +558,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB105A34291AF0A50095C324 /* Coordinator.swift in Sources */,
 				FB35D33523F9403B00F71097 /* GameViewModel.swift in Sources */,
 				FB35D31F23F8928B00F71097 /* CGPoint+Extensions.swift in Sources */,
+				FB105A39291AF12A0095C324 /* HomeCoordinator.swift in Sources */,
+				FB105A32291AE8060095C324 /* R.generated.swift in Sources */,
 				FB35D31D23F88EF300F71097 /* MoveDirection.swift in Sources */,
 				FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */,
 				FB35D33023F93F9100F71097 /* HomeView.swift in Sources */,

@@ -11,26 +11,30 @@ import SwiftUI
 struct GameView: View {
     @ObservedObject var viewModel: GameViewModel = GameViewModel()
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var homeCoordinator: HomeCoordinator
     
     let SWIPE_TRESHOLD: CGFloat = 70.0
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .center) {
-                Color.init(red: 41.0 / 255.0, green: 128.0 / 255.0, blue: 185.0 / 255.0)
+                Color(R.color.commonBackground.name)
                     .edgesIgnoringSafeArea(.all)
+
                 VStack {
                     Spacer().frame(height: 20)
                     
-                    VStack(alignment: .center, spacing: 0.5) {
-                        ForEach(0..<Int(viewModel.game.areaSize.height)) { j in
-                            HStack(alignment: .center, spacing: 0.5) {
-                                ForEach(0..<Int(self.viewModel.game.areaSize.width)) { i in
+                    VStack(alignment: .center, spacing: 0) {
+                        ForEach(0..<Int(self.viewModel.game.areaSize.height), id: \.self) { j in
+                            HStack(alignment: .center, spacing: 0) {
+                                ForEach(0..<Int(self.viewModel.game.areaSize.width), id: \.self) { i in
                                     CellView(cellType: self.viewModel.getCellType(i, j))
                                 }
                             }
                         }
-                    }.background(Color.black).padding(5).cornerRadius(6.0)
+                    }
+                    .padding(5)
+                    .cornerRadius(6.0)
                     
                     Spacer().frame(height: 20)
                 }
@@ -44,10 +48,11 @@ struct GameView: View {
             .navigationBarHidden(true)
             .onAppear {
                 self.viewModel.startGame()
-        }.onReceive(viewModel.objectWillChange) { _ in
+        }
+            .onReceive(viewModel.objectWillChange) { _ in
             if self.viewModel.game.state == .crash {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                    self.presentationMode.wrappedValue.dismiss()
+                    homeCoordinator.popBack()
                 })
             }
         }

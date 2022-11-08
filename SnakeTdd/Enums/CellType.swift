@@ -9,18 +9,20 @@
 import SwiftUI
 
 public enum CellType {
-    case snake, feed, empty
+    case snake, feed, empty, snakeHead
 }
 
 public extension CellType {
     func getColor() -> Color {
         switch self {
         case .snake:
-            return Color.red
+            return Color(R.color.gameSnakeBody.name)
+        case .snakeHead:
+            return Color(R.color.gameSnakeHead.name)
         case .feed:
-            return Color.green
+            return Color(R.color.gameFeed.name)
         case .empty:
-            return Color.yellow
+            return Color(R.color.gameBoard.name)
         }
     }
 }

@@ -9,7 +9,7 @@
 import CoreGraphics
 
 class Game {
-    private(set) var areaSize: CGSize
+    let areaSize: CGSize
     private(set) var score: Int = 0
     private(set) var snake: Snake
     private(set) var feedPosition: CGPoint

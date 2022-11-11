@@ -14,6 +14,8 @@
 		FB105A32291AE8060095C324 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB105A31291AE8060095C324 /* R.generated.swift */; };
 		FB105A34291AF0A50095C324 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB105A33291AF0A50095C324 /* Coordinator.swift */; };
 		FB105A39291AF12A0095C324 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB105A38291AF12A0095C324 /* HomeCoordinator.swift */; };
+		FB1793BD291C5CB100341D0A /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1793BC291C5CB100341D0A /* MenuButton.swift */; };
+		FB1793BF291C605C00341D0A /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1793BE291C605C00341D0A /* VisualEffectView.swift */; };
 		FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2E723F8840D00F71097 /* AppDelegate.swift */; };
 		FB35D2EA23F8840D00F71097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2E923F8840D00F71097 /* SceneDelegate.swift */; };
 		FB35D2EC23F8840D00F71097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2EB23F8840D00F71097 /* ContentView.swift */; };
@@ -70,6 +72,8 @@
 		FB105A31291AE8060095C324 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		FB105A33291AF0A50095C324 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FB105A38291AF12A0095C324 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		FB1793BC291C5CB100341D0A /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		FB1793BE291C605C00341D0A /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		FB35D2E423F8840D00F71097 /* SnakeTdd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeTdd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB35D2E723F8840D00F71097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB35D2E923F8840D00F71097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		FB1793BB291C5C9F00341D0A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FB1793BC291C5CB100341D0A /* MenuButton.swift */,
+				FB1793BE291C605C00341D0A /* VisualEffectView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		FB35D2DB23F8840D00F71097 = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +227,7 @@
 		FB35D2E623F8840D00F71097 /* SnakeTdd */ = {
 			isa = PBXGroup;
 			children = (
+				FB1793BB291C5C9F00341D0A /* Components */,
 				FB105A35291AF0D50095C324 /* Story */,
 				FB35D32623F8AA9D00F71097 /* Enums */,
 				FB35D32223F8941F00F71097 /* Extensions */,
@@ -572,8 +586,10 @@
 				FB35D31B23F88E5300F71097 /* Snake.swift in Sources */,
 				FB35D33923F973FF00F71097 /* CellView.swift in Sources */,
 				FB35D32823F8AC7B00F71097 /* GameState.swift in Sources */,
+				FB1793BD291C5CB100341D0A /* MenuButton.swift in Sources */,
 				FB35D33B23F9756F00F71097 /* CellType.swift in Sources */,
 				FB35D2EC23F8840D00F71097 /* ContentView.swift in Sources */,
+				FB1793BF291C605C00341D0A /* VisualEffectView.swift in Sources */,
 				FB35D31923F8861400F71097 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,7 +691,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -729,7 +745,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -749,7 +765,9 @@
 				DEVELOPMENT_TEAM = TU6A9VFP8M;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SnakeTdd/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_KEY_CFBundleDisplayName = Snakev;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -771,7 +789,9 @@
 				DEVELOPMENT_TEAM = TU6A9VFP8M;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SnakeTdd/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_KEY_CFBundleDisplayName = Snakev;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

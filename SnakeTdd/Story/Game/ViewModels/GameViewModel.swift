@@ -12,24 +12,14 @@ import Combine
 
 class GameViewModel: ObservableObject {
     @Published var game: Game
-    var gameTimer: Timer?
+
     let objectWillChange = PassthroughSubject<Void, Never>()
     
     let FPS: Double = 6.0
-    
-    deinit {
-        gameTimer?.invalidate()
-    }
-    
+
     init() {
         let snake: Snake = Snake(headPos: CGPoint(x: 4, y: 4), direction: .right, initialSize: 4)
         game = Game(areaSize: CGSize(width: 15.0, height: 15.0), snake: snake)
-    }
-    
-    func startGame() {
-        gameTimer = Timer.scheduledTimer(withTimeInterval: 1.0/FPS, repeats: true, block: { [weak self] _ in
-            self?.update()
-        })
     }
     
     func swipe(_ direction: MoveDirection) {
@@ -50,10 +40,7 @@ class GameViewModel: ObservableObject {
     
     func update() {
         game.doMovement()
-        
-        if game.state == .crash {
-            gameTimer?.invalidate()
-        }
+
         objectWillChange.send()
     }
 }

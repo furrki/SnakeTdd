@@ -14,50 +14,46 @@ struct GameView: View {
     @EnvironmentObject var homeCoordinator: HomeCoordinator
     
     let SWIPE_TRESHOLD: CGFloat = 70.0
+    var gameTimer = Timer.publish(every: 1.0 / 6.0,
+                                                        on: .main,
+                                                        in: .common).autoconnect()
     
     var body: some View {
-        NavigationView {
-            ZStack(alignment: .center) {
-                Color(R.color.commonBackground.name)
-                    .edgesIgnoringSafeArea(.all)
+        VStack {
+            Spacer().frame(height: 20)
 
-                VStack {
-                    Spacer().frame(height: 20)
-                    
-                    VStack(alignment: .center, spacing: 0) {
-                        ForEach(0..<Int(self.viewModel.game.areaSize.height), id: \.self) { j in
-                            HStack(alignment: .center, spacing: 0) {
-                                ForEach(0..<Int(self.viewModel.game.areaSize.width), id: \.self) { i in
-                                    CellView(cellType: self.viewModel.getCellType(i, j))
-                                }
-                            }
+            VStack(alignment: .center, spacing: 0) {
+                ForEach(0..<Int(self.viewModel.game.areaSize.height), id: \.self) { j in
+                    HStack(alignment: .center, spacing: 0) {
+                        ForEach(0..<Int(self.viewModel.game.areaSize.width), id: \.self) { i in
+                            CellView(cellType: self.viewModel.getCellType(i, j))
                         }
                     }
-                    .padding(5)
-                    .cornerRadius(6.0)
-                    
-                    Spacer().frame(height: 20)
                 }
             }
-            .gesture(DragGesture().onEnded { (value) in
-                let _ = self.swiped(value.translation)
-            })
-            
-        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
-            .navigationBarTitle("Snake", displayMode: .inline)
-            .navigationBarHidden(true)
-            .onAppear {
-                self.viewModel.startGame()
+            .animation(.easeInOut(duration: 0.1),
+                       value: viewModel.game.snake.headPos)
+
+            .padding(5)
+            .cornerRadius(6.0)
+
+            Spacer().frame(height: 20)
         }
-            .onReceive(viewModel.objectWillChange) { _ in
+        .gesture(DragGesture().onEnded { (value) in
+            let _ = self.swiped(value.translation)
+        })
+        .onReceive(viewModel.objectWillChange) { _ in
             if self.viewModel.game.state == .crash {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                     homeCoordinator.popBack()
                 })
             }
         }
+        .onReceive(gameTimer) { input in
+            viewModel.update()
+        }
     }
-    
+
     func swiped(_ value: CGSize) -> MoveDirection? {
         if abs(value.width) > abs(value.height) {
             // Horizontal

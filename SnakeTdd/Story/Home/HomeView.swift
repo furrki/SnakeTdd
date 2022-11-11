@@ -8,16 +8,26 @@
 
 import Combine
 import SwiftUI
+import UIKit
 
 struct HomeView: View {
     @ObservedObject var coordinator = HomeCoordinator()
     
     var body: some View {
         ZStack {
+            Image(R.image.grass.name)
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+
+            VisualEffectView(effect: UIBlurEffect(style: .dark))
+                .edgesIgnoringSafeArea(.all)
+
             switch coordinator.currentScreen {
             case .game:
                 GameView()
                     .environmentObject(coordinator)
+                    .transition(.move(edge: .top))
             case .none:
                 homeView
             }
@@ -26,24 +36,20 @@ struct HomeView: View {
 
     private var homeView: some View {
         ZStack {
-            Color(R.color.commonBackground.name)
-                .edgesIgnoringSafeArea(.all)
-
             VStack(alignment: .center, spacing: 20) {
-                Text("Snake").font(Font.system(size: 35, weight: .semibold, design: Font.Design.rounded)).multilineTextAlignment(.center)
+                Text("Snake")
+                    .font(Font.system(size: 35, weight: .semibold, design: Font.Design.rounded))
+                    .foregroundColor(Color(R.color.commonTitle.name))
+                    .multilineTextAlignment(.center)
 
-                Spacer().frame(height: 30)
-
-                Button {
-                    coordinator.currentScreen = .game
-                } label: {
-                    Text("Start Game")
-                        .frame(width: 200, height: 50, alignment: .center)
-                        .background(Color(R.color.commonButtonBackground.name))
-                        .foregroundColor(Color(R.color.commonButtonText.name))
-                        .cornerRadius(30)
-
+                Button("Start Game") {
+                    withAnimation {
+                        coordinator.currentScreen = .game
+                    }
                 }
+                .buttonStyle(MenuButton())
+                .font(.system(size: 15, weight: .semibold))
+                .padding(.top, 30)
             }
         }
     }

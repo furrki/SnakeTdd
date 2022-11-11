@@ -9,20 +9,29 @@
 import SwiftUI
 
 struct GameView: View {
+    // MARK: - Constants
+    private enum Constants {
+        static let swipeThreshold = 70.0
+        static let fps = 6.0
+        static let startDelay = 0.6
+    }
+
+    // MARK: - Properties
     @ObservedObject var viewModel: GameViewModel = GameViewModel()
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var homeCoordinator: HomeCoordinator
-    
-    let SWIPE_TRESHOLD: CGFloat = 70.0
-    var gameTimer = Timer.publish(every: 1.0 / 6.0,
+
+    var gameTimer = Timer.publish(every: 1.0 / Constants.fps,
                                                         on: .main,
                                                         in: .common)
 
+    // MARK: - Body
     private var headerView: some View {
         HStack(alignment: .center, spacing: 15) {
             BackButton {
                 homeCoordinator.popBack()
             }
+
             Spacer()
         }
         .padding(.horizontal, 40)
@@ -47,10 +56,9 @@ struct GameView: View {
                 .cornerRadius(6.0)
             }
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + Constants.startDelay) {
                     let _ = gameTimer.connect()
                 }
-
             }
             .gesture(DragGesture().onEnded { (value) in
                 let _ = self.swiped(value.translation)
@@ -61,13 +69,13 @@ struct GameView: View {
             .onReceive(gameTimer) { input in
                 viewModel.update()
             }
-
     }
 
+    // MARK: - Methods
     func swiped(_ value: CGSize) -> MoveDirection? {
         if abs(value.width) > abs(value.height) {
             // Horizontal
-            if abs(value.width) >= SWIPE_TRESHOLD {
+            if abs(value.width) >= Constants.swipeThreshold {
                 if value.width > 0 {
                     viewModel.swipe(.right)
                     return .right
@@ -78,7 +86,7 @@ struct GameView: View {
             }
         } else {
             // Vertical
-            if abs(value.height) >= SWIPE_TRESHOLD {
+            if abs(value.height) >= Constants.swipeThreshold {
                 if value.height > 0 {
                     viewModel.swipe(.down)
                     return .down

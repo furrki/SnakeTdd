@@ -15,13 +15,8 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            Image(R.image.grass.name)
-                .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
-
-            VisualEffectView(effect: UIBlurEffect(style: .dark))
-                .edgesIgnoringSafeArea(.all)
+            Color(R.color.commonBackground.name)
+                .ignoresSafeArea(.all)
 
             switch coordinator.currentScreen {
             case .game:

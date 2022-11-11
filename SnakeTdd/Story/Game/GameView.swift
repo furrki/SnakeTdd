@@ -16,42 +16,52 @@ struct GameView: View {
     let SWIPE_TRESHOLD: CGFloat = 70.0
     var gameTimer = Timer.publish(every: 1.0 / 6.0,
                                                         on: .main,
-                                                        in: .common).autoconnect()
-    
-    var body: some View {
-        VStack {
-            Spacer().frame(height: 20)
+                                                        in: .common)
 
-            VStack(alignment: .center, spacing: 0) {
-                ForEach(0..<Int(self.viewModel.game.areaSize.height), id: \.self) { j in
-                    HStack(alignment: .center, spacing: 0) {
-                        ForEach(0..<Int(self.viewModel.game.areaSize.width), id: \.self) { i in
-                            CellView(cellType: self.viewModel.getCellType(i, j))
+    private var headerView: some View {
+        HStack(alignment: .center, spacing: 15) {
+            BackButton {
+                homeCoordinator.popBack()
+            }
+            Spacer()
+        }
+        .padding(.horizontal, 40)
+    }
+
+    var body: some View {
+            VStack {
+                headerView
+
+                VStack(alignment: .center, spacing: 0) {
+                    ForEach(0..<Int(self.viewModel.game.areaSize.height), id: \.self) { j in
+                        HStack(alignment: .center, spacing: 0) {
+                            ForEach(0..<Int(self.viewModel.game.areaSize.width), id: \.self) { i in
+                                CellView(cellType: self.viewModel.getCellType(i, j))
+                            }
                         }
                     }
                 }
+                .animation(.easeInOut(duration: 0.1),
+                           value: viewModel.game.snake.headPos)
+                .padding(5)
+                .cornerRadius(6.0)
             }
-            .animation(.easeInOut(duration: 0.1),
-                       value: viewModel.game.snake.headPos)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    let _ = gameTimer.connect()
+                }
 
-            .padding(5)
-            .cornerRadius(6.0)
-
-            Spacer().frame(height: 20)
-        }
-        .gesture(DragGesture().onEnded { (value) in
-            let _ = self.swiped(value.translation)
-        })
-        .onReceive(viewModel.objectWillChange) { _ in
-            if self.viewModel.game.state == .crash {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                    homeCoordinator.popBack()
-                })
             }
-        }
-        .onReceive(gameTimer) { input in
-            viewModel.update()
-        }
+            .gesture(DragGesture().onEnded { (value) in
+                let _ = self.swiped(value.translation)
+            })
+            .onReceive(viewModel.objectWillChange) { _ in
+
+            }
+            .onReceive(gameTimer) { input in
+                viewModel.update()
+            }
+
     }
 
     func swiped(_ value: CGSize) -> MoveDirection? {
@@ -84,6 +94,9 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        ZStack {
+            Color.green
+            GameView()
+        }
     }
 }

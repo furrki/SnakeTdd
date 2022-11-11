@@ -14,8 +14,7 @@ class GameViewModel: ObservableObject {
     @Published var game: Game
 
     let objectWillChange = PassthroughSubject<Void, Never>()
-    
-    let FPS: Double = 6.0
+    let fps: Double = 6.0
 
     init() {
         let snake: Snake = Snake(headPos: CGPoint(x: 4, y: 4), direction: .right, initialSize: 4)
@@ -40,7 +39,6 @@ class GameViewModel: ObservableObject {
     
     func update() {
         game.doMovement()
-
         objectWillChange.send()
     }
 }

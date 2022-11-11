@@ -36,6 +36,10 @@ class Game {
     }
     
     func doMovement() {
+        guard state != .crash else {
+            return
+        }
+        
         if checkNextCollision() {
             state = .crash
         } else {

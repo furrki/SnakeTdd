@@ -16,6 +16,7 @@
 		FB105A39291AF12A0095C324 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB105A38291AF12A0095C324 /* HomeCoordinator.swift */; };
 		FB1793BD291C5CB100341D0A /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1793BC291C5CB100341D0A /* MenuButton.swift */; };
 		FB1793BF291C605C00341D0A /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1793BE291C605C00341D0A /* VisualEffectView.swift */; };
+		FB2FC7AE291ED6F800A3C026 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2FC7AD291ED6F800A3C026 /* BackButton.swift */; };
 		FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2E723F8840D00F71097 /* AppDelegate.swift */; };
 		FB35D2EA23F8840D00F71097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2E923F8840D00F71097 /* SceneDelegate.swift */; };
 		FB35D2EC23F8840D00F71097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2EB23F8840D00F71097 /* ContentView.swift */; };
@@ -74,6 +75,7 @@
 		FB105A38291AF12A0095C324 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		FB1793BC291C5CB100341D0A /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		FB1793BE291C605C00341D0A /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		FB2FC7AD291ED6F800A3C026 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		FB35D2E423F8840D00F71097 /* SnakeTdd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeTdd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB35D2E723F8840D00F71097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB35D2E923F8840D00F71097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				FB1793BC291C5CB100341D0A /* MenuButton.swift */,
 				FB1793BE291C605C00341D0A /* VisualEffectView.swift */,
+				FB2FC7AD291ED6F800A3C026 /* BackButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				FB35D33523F9403B00F71097 /* GameViewModel.swift in Sources */,
 				FB35D31F23F8928B00F71097 /* CGPoint+Extensions.swift in Sources */,
 				FB105A39291AF12A0095C324 /* HomeCoordinator.swift in Sources */,
+				FB2FC7AE291ED6F800A3C026 /* BackButton.swift in Sources */,
 				FB105A32291AE8060095C324 /* R.generated.swift in Sources */,
 				FB35D31D23F88EF300F71097 /* MoveDirection.swift in Sources */,
 				FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */,
@@ -767,7 +771,7 @@
 				INFOPLIST_FILE = SnakeTdd/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Snakev;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -791,7 +795,7 @@
 				INFOPLIST_FILE = SnakeTdd/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Snakev;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -11,19 +11,24 @@ import SwiftUI
 struct GameView: View {
     // MARK: - Constants
     private enum Constants {
-        static let swipeThreshold = 70.0
-        static let fps = 6.0
+        static let swipeThreshold = 60.0
+        static let fps = 5.0
         static let startDelay = 0.6
     }
 
     // MARK: - Properties
     @ObservedObject var viewModel: GameViewModel = GameViewModel()
-    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var homeCoordinator: HomeCoordinator
+    private var settingsManager = DependencyManager.storageManager.settingsManager
 
-    var gameTimer = Timer.publish(every: 1.0 / Constants.fps,
-                                                        on: .main,
-                                                        in: .common)
+
+    var gameTimer: Timer.TimerPublisher
+
+    init(speed: GameSpeed) {
+        gameTimer = Timer.publish(every: 1.0 / speed.rawValue,
+                                  on: .main,
+                                  in: .common)
+    }
 
     // MARK: - Body
     private var headerView: some View {
@@ -34,41 +39,51 @@ struct GameView: View {
 
             Spacer()
         }
-        .padding(.horizontal, 40)
+        .padding(.horizontal, 30)
     }
 
     var body: some View {
-            VStack {
-                headerView
+        VStack {
+            headerView
+                .padding(.top, 10)
 
-                VStack(alignment: .center, spacing: 0) {
-                    ForEach(0..<Int(self.viewModel.game.areaSize.height), id: \.self) { j in
-                        HStack(alignment: .center, spacing: 0) {
-                            ForEach(0..<Int(self.viewModel.game.areaSize.width), id: \.self) { i in
-                                CellView(cellType: self.viewModel.getCellType(i, j))
-                            }
+            VStack(alignment: .center, spacing: 0) {
+                ForEach(0..<Int(self.viewModel.game.areaSize.height), id: \.self) { j in
+                    HStack(alignment: .center, spacing: 0) {
+                        ForEach(0..<Int(self.viewModel.game.areaSize.width), id: \.self) { i in
+                            CellView(cellType: self.viewModel.getCellType(i, j))
                         }
                     }
                 }
-                .animation(.easeInOut(duration: 0.1),
-                           value: viewModel.game.snake.headPos)
-                .padding(5)
-                .cornerRadius(6.0)
             }
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + Constants.startDelay) {
-                    let _ = gameTimer.connect()
-                }
-            }
-            .gesture(DragGesture().onEnded { (value) in
-                let _ = self.swiped(value.translation)
-            })
-            .onReceive(viewModel.objectWillChange) { _ in
+//            .animation(.linear(duration: 0.2),
+//                       value: viewModel.game.snake.headPos)
+            .padding(5)
+            .padding(.top, 20)
+            .cornerRadius(6.0)
 
+            if !settingsManager.isUsingButtons {
+                PhoneButtonsView { number in
+                    viewModel.swipeByButton(number: number)
+                }
+                .padding(.top, 40)
             }
-            .onReceive(gameTimer) { input in
-                viewModel.update()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Constants.startDelay) {
+                let _ = gameTimer.connect()
             }
+        }
+        .gesture(DragGesture().onEnded { (value) in
+            let _ = self.swiped(value.translation)
+        })
+        .onReceive(viewModel.objectWillChange) { _ in
+
+        }
+        .onReceive(gameTimer) { input in
+            viewModel.update()
+        }
     }
 
     // MARK: - Methods
@@ -104,7 +119,7 @@ struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.green
-            GameView()
+            GameView(speed: .fast)
         }
     }
 }

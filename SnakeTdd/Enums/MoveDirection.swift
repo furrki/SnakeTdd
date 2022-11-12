@@ -25,4 +25,30 @@ public extension MoveDirection {
             return CGVector(dx: 0, dy: 1)
         }
     }
+
+    func getClockwiseNext() -> MoveDirection {
+        switch self {
+        case .left:
+            return .up
+        case .up:
+            return .right
+        case .right:
+            return .down
+        case .down:
+            return .left
+        }
+    }
+
+    func getClockwisePrevious() -> MoveDirection {
+        switch self {
+        case .left:
+            return .down
+        case .up:
+            return .left
+        case .right:
+            return .up
+        case .down:
+            return .right
+        }
+    }
 }

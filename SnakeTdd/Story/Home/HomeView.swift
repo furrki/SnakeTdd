@@ -12,6 +12,7 @@ import UIKit
 
 struct HomeView: View {
     @ObservedObject var coordinator = HomeCoordinator()
+    @State private var isShowingSettings  = false
     
     var body: some View {
         ZStack {
@@ -20,7 +21,7 @@ struct HomeView: View {
 
             switch coordinator.currentScreen {
             case .game:
-                GameView()
+                GameView(speed: .normal)
                     .environmentObject(coordinator)
                     .transition(.move(edge: .top))
             case .none:
@@ -31,7 +32,24 @@ struct HomeView: View {
 
     private var homeView: some View {
         ZStack {
-            VStack(alignment: .center, spacing: 20) {
+            VStack(spacing: 20) {
+                HStack {
+                    Spacer()
+
+                    Button {
+                        isShowingSettings = true
+                    } label: {
+                        Image(systemName: "gear")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(Color(R.color.commonButtonText.name))
+                    }
+                }
+                .padding(.horizontal, 40)
+                .padding(.top, 20)
+
+                Spacer()
+
                 Text("Snake")
                     .font(Font.system(size: 35, weight: .semibold, design: Font.Design.rounded))
                     .foregroundColor(Color(R.color.commonTitle.name))
@@ -45,7 +63,13 @@ struct HomeView: View {
                 .buttonStyle(MenuButton())
                 .font(.system(size: 15, weight: .semibold))
                 .padding(.top, 30)
+
+                Spacer()
             }
+            .sheet(isPresented: $isShowingSettings) {
+                SettingsView()
+            }
+
         }
     }
 }

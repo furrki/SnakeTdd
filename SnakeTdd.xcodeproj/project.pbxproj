@@ -17,6 +17,7 @@
 		FB1793BD291C5CB100341D0A /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1793BC291C5CB100341D0A /* MenuButton.swift */; };
 		FB1793BF291C605C00341D0A /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1793BE291C605C00341D0A /* VisualEffectView.swift */; };
 		FB2FC7AE291ED6F800A3C026 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2FC7AD291ED6F800A3C026 /* BackButton.swift */; };
+		FB2FC7B0291F018E00A3C026 /* PhoneButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2FC7AF291F018E00A3C026 /* PhoneButtonsView.swift */; };
 		FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2E723F8840D00F71097 /* AppDelegate.swift */; };
 		FB35D2EA23F8840D00F71097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2E923F8840D00F71097 /* SceneDelegate.swift */; };
 		FB35D2EC23F8840D00F71097 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D2EB23F8840D00F71097 /* ContentView.swift */; };
@@ -40,6 +41,15 @@
 		FB35D33723F9503300F71097 /* SwipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D33623F9503300F71097 /* SwipeTests.swift */; };
 		FB35D33923F973FF00F71097 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D33823F973FF00F71097 /* CellView.swift */; };
 		FB35D33B23F9756F00F71097 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D33A23F9756F00F71097 /* CellType.swift */; };
+		FBA2AD9C291F93E90025AB17 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2AD9B291F93E90025AB17 /* SettingsView.swift */; };
+		FBA2AD9F291F94060025AB17 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2AD9E291F94060025AB17 /* SettingsViewModel.swift */; };
+		FBA2ADA1291F94AC0025AB17 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2ADA0291F94AC0025AB17 /* SettingsManager.swift */; };
+		FBA2ADA6291FB0A90025AB17 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2ADA3291FB0A90025AB17 /* Storage.swift */; };
+		FBA2ADA7291FB0A90025AB17 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2ADA4291FB0A90025AB17 /* CodableStorage.swift */; };
+		FBA2ADA8291FB0A90025AB17 /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2ADA5291FB0A90025AB17 /* DiskStorage.swift */; };
+		FBA2ADAB291FB0C30025AB17 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2ADAA291FB0C30025AB17 /* StorageManager.swift */; };
+		FBA2ADAD291FB0EA0025AB17 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2ADAC291FB0EA0025AB17 /* DependencyManager.swift */; };
+		FBA2ADAF29200ECC0025AB17 /* GameSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2ADAE29200ECC0025AB17 /* GameSpeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +86,7 @@
 		FB1793BC291C5CB100341D0A /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		FB1793BE291C605C00341D0A /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		FB2FC7AD291ED6F800A3C026 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		FB2FC7AF291F018E00A3C026 /* PhoneButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneButtonsView.swift; sourceTree = "<group>"; };
 		FB35D2E423F8840D00F71097 /* SnakeTdd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeTdd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB35D2E723F8840D00F71097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB35D2E923F8840D00F71097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +116,15 @@
 		FB35D33623F9503300F71097 /* SwipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTests.swift; sourceTree = "<group>"; };
 		FB35D33823F973FF00F71097 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		FB35D33A23F9756F00F71097 /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
+		FBA2AD9B291F93E90025AB17 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FBA2AD9E291F94060025AB17 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		FBA2ADA0291F94AC0025AB17 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		FBA2ADA3291FB0A90025AB17 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		FBA2ADA4291FB0A90025AB17 /* CodableStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableStorage.swift; sourceTree = "<group>"; };
+		FBA2ADA5291FB0A90025AB17 /* DiskStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
+		FBA2ADAA291FB0C30025AB17 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		FBA2ADAC291FB0EA0025AB17 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
+		FBA2ADAE29200ECC0025AB17 /* GameSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSpeed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,9 +208,11 @@
 		FB105A37291AF0E10095C324 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				FBA2AD9D291F93F10025AB17 /* Settings */,
 				FB35D33323F9402E00F71097 /* ViewModels */,
 				FB35D33123F9402A00F71097 /* GameView.swift */,
 				FB35D33823F973FF00F71097 /* CellView.swift */,
+				FB2FC7AF291F018E00A3C026 /* PhoneButtonsView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -289,9 +311,13 @@
 		FB35D32323F8942700F71097 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FBA2ADA9291FB0B90025AB17 /* Managers */,
+				FBA2ADA2291FB0A90025AB17 /* Storage */,
 				FB35D31823F8861400F71097 /* Game.swift */,
 				FB35D31A23F88E5300F71097 /* Snake.swift */,
 				FB105A33291AF0A50095C324 /* Coordinator.swift */,
+				FBA2ADA0291F94AC0025AB17 /* SettingsManager.swift */,
+				FBA2ADAE29200ECC0025AB17 /* GameSpeed.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -312,6 +338,34 @@
 				FB35D33423F9403B00F71097 /* GameViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FBA2AD9D291F93F10025AB17 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FBA2AD9B291F93E90025AB17 /* SettingsView.swift */,
+				FBA2AD9E291F94060025AB17 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FBA2ADA2291FB0A90025AB17 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				FBA2ADA3291FB0A90025AB17 /* Storage.swift */,
+				FBA2ADA4291FB0A90025AB17 /* CodableStorage.swift */,
+				FBA2ADA5291FB0A90025AB17 /* DiskStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		FBA2ADA9291FB0B90025AB17 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FBA2ADAA291FB0C30025AB17 /* StorageManager.swift */,
+				FBA2ADAC291FB0EA0025AB17 /* DependencyManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -576,15 +630,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB105A34291AF0A50095C324 /* Coordinator.swift in Sources */,
+				FBA2ADAD291FB0EA0025AB17 /* DependencyManager.swift in Sources */,
+				FBA2AD9F291F94060025AB17 /* SettingsViewModel.swift in Sources */,
 				FB35D33523F9403B00F71097 /* GameViewModel.swift in Sources */,
+				FBA2ADAB291FB0C30025AB17 /* StorageManager.swift in Sources */,
+				FB2FC7B0291F018E00A3C026 /* PhoneButtonsView.swift in Sources */,
 				FB35D31F23F8928B00F71097 /* CGPoint+Extensions.swift in Sources */,
 				FB105A39291AF12A0095C324 /* HomeCoordinator.swift in Sources */,
 				FB2FC7AE291ED6F800A3C026 /* BackButton.swift in Sources */,
 				FB105A32291AE8060095C324 /* R.generated.swift in Sources */,
 				FB35D31D23F88EF300F71097 /* MoveDirection.swift in Sources */,
+				FBA2ADA6291FB0A90025AB17 /* Storage.swift in Sources */,
 				FB35D2E823F8840D00F71097 /* AppDelegate.swift in Sources */,
 				FB35D33023F93F9100F71097 /* HomeView.swift in Sources */,
 				FB35D2EA23F8840D00F71097 /* SceneDelegate.swift in Sources */,
+				FBA2ADAF29200ECC0025AB17 /* GameSpeed.swift in Sources */,
 				FB35D33223F9402A00F71097 /* GameView.swift in Sources */,
 				FB35D32123F8941900F71097 /* CGVector+Extensions.swift in Sources */,
 				FB35D31B23F88E5300F71097 /* Snake.swift in Sources */,
@@ -592,9 +652,13 @@
 				FB35D32823F8AC7B00F71097 /* GameState.swift in Sources */,
 				FB1793BD291C5CB100341D0A /* MenuButton.swift in Sources */,
 				FB35D33B23F9756F00F71097 /* CellType.swift in Sources */,
+				FBA2ADA7291FB0A90025AB17 /* CodableStorage.swift in Sources */,
 				FB35D2EC23F8840D00F71097 /* ContentView.swift in Sources */,
+				FBA2ADA1291F94AC0025AB17 /* SettingsManager.swift in Sources */,
+				FBA2ADA8291FB0A90025AB17 /* DiskStorage.swift in Sources */,
 				FB1793BF291C605C00341D0A /* VisualEffectView.swift in Sources */,
 				FB35D31923F8861400F71097 /* Game.swift in Sources */,
+				FBA2AD9C291F93E90025AB17 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

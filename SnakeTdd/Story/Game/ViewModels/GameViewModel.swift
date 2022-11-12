@@ -14,11 +14,10 @@ class GameViewModel: ObservableObject {
     @Published var game: Game
 
     let objectWillChange = PassthroughSubject<Void, Never>()
-    let fps: Double = 6.0
 
     init() {
         let snake: Snake = Snake(headPos: CGPoint(x: 4, y: 4), direction: .right, initialSize: 4)
-        game = Game(areaSize: CGSize(width: 15.0, height: 15.0), snake: snake)
+        game = Game(areaSize: CGSize(width: 18.0, height: 18.0), snake: snake)
     }
     
     func swipe(_ direction: MoveDirection) {
@@ -34,6 +33,25 @@ class GameViewModel: ObservableObject {
             return .feed
         } else {
             return .empty
+        }
+    }
+
+    func swipeByButton(number: String) {
+        switch number {
+        case "1":
+            swipe(game.snake.direction.getClockwisePrevious())
+        case "2":
+            swipe(.up)
+        case "3":
+            swipe(game.snake.direction.getClockwiseNext())
+        case "4":
+            swipe(.left)
+        case "6":
+            swipe(.right)
+        case "8":
+            swipe(.down)
+        default:
+            break
         }
     }
     

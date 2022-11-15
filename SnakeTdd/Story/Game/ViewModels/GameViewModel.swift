@@ -12,12 +12,13 @@ import Combine
 
 class GameViewModel: ObservableObject {
     @Published var game: Game
+    @Published private(set) var shouldShowGameOver = false
 
     let objectWillChange = PassthroughSubject<Void, Never>()
 
     init() {
         let snake: Snake = Snake(headPos: CGPoint(x: 4, y: 4), direction: .right, initialSize: 4)
-        game = Game(areaSize: CGSize(width: 18.0, height: 18.0), snake: snake)
+        game = Game(areaSize: CGSize(width: 16.0, height: 16.0), snake: snake)
     }
     
     func swipe(_ direction: MoveDirection) {
@@ -54,9 +55,20 @@ class GameViewModel: ObservableObject {
             break
         }
     }
-    
+
+    func gameOverTapped() {
+        shouldShowGameOver = false
+
+        objectWillChange.send()
+    }
+
     func update() {
         game.doMovement()
+
+        if game.state == .crash {
+            shouldShowGameOver = true
+        }
+
         objectWillChange.send()
     }
 }

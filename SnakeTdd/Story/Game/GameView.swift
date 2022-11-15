@@ -39,28 +39,57 @@ struct GameView: View {
 
             Spacer()
         }
-        .padding(.horizontal, 30)
+    }
+
+    private var tableView: some View {
+        VStack(alignment: .center, spacing: 0) {
+            ForEach(0..<Int(self.viewModel.game.areaSize.height), id: \.self) { j in
+                HStack(alignment: .center, spacing: 0) {
+                    ForEach(0..<Int(self.viewModel.game.areaSize.width), id: \.self) { i in
+                        CellView(cellType: self.viewModel.getCellType(i, j))
+                    }
+                }
+            }
+        }
+        .padding(5)
+        .cornerRadius(6.0)
     }
 
     var body: some View {
         VStack {
             headerView
                 .padding(.top, 10)
+                .padding(.horizontal, 40)
+            Spacer()
 
-            VStack(alignment: .center, spacing: 0) {
-                ForEach(0..<Int(self.viewModel.game.areaSize.height), id: \.self) { j in
-                    HStack(alignment: .center, spacing: 0) {
-                        ForEach(0..<Int(self.viewModel.game.areaSize.width), id: \.self) { i in
-                            CellView(cellType: self.viewModel.getCellType(i, j))
-                        }
+            VStack(spacing: 0) {
+                HStack {
+                    Text("Score: \(viewModel.game.score)")
+                        .font(.system(size: 12.0, weight: .semibold))
+                        .foregroundColor(Color(R.color.commonTitle.name))
+                    Spacer()
+                }
+                .padding(.horizontal, 40)
+                .animation(.none, value: viewModel.game.score)
+                
+                ZStack {
+                    tableView
+                    .animation(.linear(duration: 0.1),
+                               value: viewModel.game.snake.headPos)
+
+                    if viewModel.shouldShowGameOver {
+                        GameOverView()
+                            .frame(width:  self.viewModel.game.areaSize.width * 20,
+                                   height: self.viewModel.game.areaSize.height * 20)
+                            .opacity(0.9)
+                            .transition(.opacity)
+                            .onTapGesture {
+                                viewModel.gameOverTapped()
+                            }
                     }
                 }
             }
-//            .animation(.linear(duration: 0.2),
-//                       value: viewModel.game.snake.headPos)
-            .padding(5)
             .padding(.top, 20)
-            .cornerRadius(6.0)
 
             if !settingsManager.isUsingButtons {
                 PhoneButtonsView { number in
@@ -68,6 +97,8 @@ struct GameView: View {
                 }
                 .padding(.top, 40)
             }
+
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
@@ -76,17 +107,21 @@ struct GameView: View {
             }
         }
         .gesture(DragGesture().onEnded { (value) in
-            let _ = self.swiped(value.translation)
+            swiped(value.translation)
         })
-        .onReceive(viewModel.objectWillChange) { _ in
-
-        }
         .onReceive(gameTimer) { input in
-            viewModel.update()
+            guard viewModel.game.state != .crash else {
+                gameTimer.connect().cancel()
+                return
+            }
+            withAnimation {
+                viewModel.update()
+            }
         }
     }
 
     // MARK: - Methods
+    @discardableResult
     func swiped(_ value: CGSize) -> MoveDirection? {
         if abs(value.width) > abs(value.height) {
             // Horizontal

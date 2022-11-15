@@ -46,7 +46,7 @@ class Game {
             if snake.futureHeadPos == feedPosition {
                 state = .eat
                 snake.didMovement(isEating: true)
-                score = score + 1
+                score = score + 5
                  generateRandomFeed()
             } else if state == .eat {
                 state = .running

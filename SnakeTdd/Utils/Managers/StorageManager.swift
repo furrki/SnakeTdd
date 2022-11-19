@@ -13,6 +13,7 @@ class StorageManager {
     // MARK: - Constants
     private enum Keys {
         static let settings = "Settings"
+        static let hasSetInputType = "HasSetInputType"
     }
 
     // MARK: - Properties
@@ -31,6 +32,16 @@ class StorageManager {
 
         set {
             try? storage.save(newValue, for: Keys.settings)
+        }
+    }
+
+    var hasSetInputType: Bool {
+        get {
+            fetchFromFile(key: Keys.hasSetInputType) ?? false
+        }
+
+        set {
+            try? storage.save(newValue, for: Keys.hasSetInputType)
         }
     }
 

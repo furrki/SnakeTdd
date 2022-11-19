@@ -17,14 +17,15 @@ struct GameView: View {
     }
 
     // MARK: - Properties
-    @ObservedObject var viewModel: GameViewModel = GameViewModel()
+    @StateObject var viewModel: GameViewModel = GameViewModel()
     @EnvironmentObject var homeCoordinator: HomeCoordinator
     private var settingsManager = DependencyManager.storageManager.settingsManager
+    private let speed: GameSpeed
 
-
-    var gameTimer: Timer.TimerPublisher
+    @State var gameTimer: Timer.TimerPublisher
 
     init(speed: GameSpeed) {
+        self.speed = speed
         gameTimer = Timer.publish(every: 1.0 / speed.rawValue,
                                   on: .main,
                                   in: .common)
@@ -38,6 +39,17 @@ struct GameView: View {
             }
 
             Spacer()
+
+            if viewModel.shouldShowReply {
+                Button {
+                    restart()
+                } label: {
+                    Image(systemName: "arrow.counterclockwise.circle")
+                        .resizable()
+                        .foregroundColor(Color(R.color.commonButtonText.name))
+                        .frame(width: 25, height: 25)
+                }
+            }
         }
     }
 
@@ -71,7 +83,7 @@ struct GameView: View {
                 }
                 .padding(.horizontal, 40)
                 .animation(.none, value: viewModel.game.score)
-                
+
                 ZStack {
                     tableView
                     .animation(.linear(duration: 0.1),
@@ -91,7 +103,7 @@ struct GameView: View {
             }
             .padding(.top, 20)
 
-            if !settingsManager.isUsingButtons {
+            if settingsManager.isUsingButtons {
                 PhoneButtonsView { number in
                     viewModel.swipeByButton(number: number)
                 }
@@ -147,6 +159,16 @@ struct GameView: View {
             }
         }
         return nil
+    }
+
+    private func restart() {
+        viewModel.restart()
+        gameTimer = Timer.publish(every: 1.0 / speed.rawValue,
+                                  on: .main,
+                                  in: .common)
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.startDelay) {
+            gameTimer.connect()
+        }
     }
 }
 

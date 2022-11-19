@@ -52,6 +52,7 @@
 		FBA2ADAD291FB0EA0025AB17 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2ADAC291FB0EA0025AB17 /* DependencyManager.swift */; };
 		FBA2ADAF29200ECC0025AB17 /* GameSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2ADAE29200ECC0025AB17 /* GameSpeed.swift */; };
 		FBA2ADB1292031EA0025AB17 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2ADB0292031EA0025AB17 /* GameOverView.swift */; };
+		FBBB38442925992100817A44 /* SelectInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB38432925992100817A44 /* SelectInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		FBA2ADAC291FB0EA0025AB17 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		FBA2ADAE29200ECC0025AB17 /* GameSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSpeed.swift; sourceTree = "<group>"; };
 		FBA2ADB0292031EA0025AB17 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		FBBB38432925992100817A44 /* SelectInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				FB1793BC291C5CB100341D0A /* MenuButton.swift */,
 				FB1793BE291C605C00341D0A /* VisualEffectView.swift */,
 				FB2FC7AD291ED6F800A3C026 /* BackButton.swift */,
+				FBBB38432925992100817A44 /* SelectInputView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				FB6ECC2E2924194800E7119D /* View+snapshot.swift in Sources */,
 				FBA2ADAB291FB0C30025AB17 /* StorageManager.swift in Sources */,
 				FB2FC7B0291F018E00A3C026 /* PhoneButtonsView.swift in Sources */,
+				FBBB38442925992100817A44 /* SelectInputView.swift in Sources */,
 				FB35D31F23F8928B00F71097 /* CGPoint+Extensions.swift in Sources */,
 				FB105A39291AF12A0095C324 /* HomeCoordinator.swift in Sources */,
 				FB2FC7AE291ED6F800A3C026 /* BackButton.swift in Sources */,

@@ -12,7 +12,10 @@ import UIKit
 
 struct HomeView: View {
     @ObservedObject var coordinator = HomeCoordinator()
-    @State private var isShowingSettings  = false
+    @State private var isShowingSettings = false
+    @State private var isShowingSelectInput = true
+    private let settingsManager = DependencyManager.storageManager.settingsManager
+    private let storageManager = DependencyManager.storageManager
     
     var body: some View {
         ZStack {
@@ -70,6 +73,26 @@ struct HomeView: View {
                 SettingsView()
             }
 
+            if isShowingSelectInput && !storageManager.hasSetInputType {
+                SelectInputView { selection in
+                    withAnimation {
+                        isShowingSelectInput = false
+                    }
+
+                    switch selection {
+                    case .buttons:
+                        settingsManager.isUsingButtons = true
+                    case .swipe:
+                        settingsManager.isUsingButtons = false
+                    }
+
+                    storageManager.hasSetInputType = true
+                }
+                .padding(.horizontal, 20)
+                .padding(.vertical, 40)
+                .background(Color(R.color.gameOverBackgroundCover.name))
+                .cornerRadius(5.0)
+            }
         }
     }
 }

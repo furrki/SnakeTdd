@@ -10,7 +10,7 @@ import CoreGraphics
 
 class Game {
     let areaSize: CGSize
-    private(set) var score: Int = 0
+    private(set) var score = 0
     private(set) var snake: Snake
     private(set) var feedPosition: CGPoint
     private(set) var state: GameState = .running
@@ -41,7 +41,11 @@ class Game {
         }
         
         if checkNextCollision() {
-            state = .crash
+            if state == .warning {
+                state = .crash
+            } else {
+                state = .warning
+            }
         } else {
             if snake.futureHeadPos == feedPosition {
                 state = .eat

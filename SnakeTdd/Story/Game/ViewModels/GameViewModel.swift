@@ -13,6 +13,7 @@ import Combine
 class GameViewModel: ObservableObject {
     @Published var game: Game
     @Published private(set) var shouldShowGameOver = false
+    @Published private(set) var shouldShowReply = false
 
     let objectWillChange = PassthroughSubject<Void, Never>()
 
@@ -62,11 +63,21 @@ class GameViewModel: ObservableObject {
         objectWillChange.send()
     }
 
+    func restart() {
+        let snake: Snake = Snake(headPos: CGPoint(x: 4, y: 4), direction: .right, initialSize: 4)
+        game = Game(areaSize: CGSize(width: 16.0, height: 16.0), snake: snake)
+        shouldShowGameOver = false
+        shouldShowReply = false
+
+        objectWillChange.send()
+    }
+
     func update() {
         game.doMovement()
 
         if game.state == .crash {
             shouldShowGameOver = true
+            shouldShowReply = true
         }
 
         objectWillChange.send()

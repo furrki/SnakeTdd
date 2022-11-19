@@ -11,5 +11,6 @@ import Foundation
 public enum GameState {
     case running
     case eat
+    case warning
     case crash
 }

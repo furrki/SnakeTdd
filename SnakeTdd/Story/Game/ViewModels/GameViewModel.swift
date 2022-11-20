@@ -15,9 +15,12 @@ class GameViewModel: ObservableObject {
     @Published private(set) var shouldShowGameOver = false
     @Published private(set) var shouldShowReply = false
 
+    private let storageManager: StorageManager
+
     let objectWillChange = PassthroughSubject<Void, Never>()
 
-    init() {
+    init(storageManager: StorageManager = DependencyManager.storageManager) {
+        self.storageManager = storageManager
         let snake: Snake = Snake(headPos: CGPoint(x: 4, y: 4), direction: .right, initialSize: 4)
         game = Game(areaSize: CGSize(width: 16.0, height: 16.0), snake: snake)
     }
@@ -76,10 +79,21 @@ class GameViewModel: ObservableObject {
         game.doMovement()
 
         if game.state == .crash {
-            shouldShowGameOver = true
-            shouldShowReply = true
+            gameEnded()
         }
 
         objectWillChange.send()
+    }
+
+    private func gameEnded() {
+        shouldShowGameOver = true
+        shouldShowReply = true
+
+        if game.score > storageManager.highScore {
+            storageManager.highScore = game.score
+            storageManager.biggestSnake = TableState(snake: game.snake,
+                                                     areaSize: game.areaSize,
+                                                     feedPosition: game.feedPosition)
+        }
     }
 }

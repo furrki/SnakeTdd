@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum MoveDirection {
+public enum MoveDirection: Codable {
     case left, right, up, down
 }
 

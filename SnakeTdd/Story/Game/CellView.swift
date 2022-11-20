@@ -10,15 +10,17 @@ import SwiftUI
 
 struct CellView: View {
     var cellType: CellType
+    let cellSize: CGSize
     
-    init(cellType: CellType) {
+    init(cellType: CellType, cellSize: CGSize = .init(width: 20, height: 20)) {
         self.cellType = cellType
+        self.cellSize = cellSize
     }
     
     var body: some View {
         Rectangle()
             .fixedSize()
-            .frame(width: 20, height: 20, alignment: .center)
+            .frame(width: cellSize.width, height: cellSize.height, alignment: .center)
             .background(self.cellType.getColor())
             .foregroundColor(self.cellType.getColor())
     }

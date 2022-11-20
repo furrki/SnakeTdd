@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-class Snake {
+class Snake: Codable {
     private(set) var headPos: CGPoint
     private(set) var direction: MoveDirection
     private(set) var lastDirection: MoveDirection

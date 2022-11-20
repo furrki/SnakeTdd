@@ -54,17 +54,14 @@ struct GameView: View {
     }
 
     private var tableView: some View {
-        VStack(alignment: .center, spacing: 0) {
-            ForEach(0..<Int(self.viewModel.game.areaSize.height), id: \.self) { j in
-                HStack(alignment: .center, spacing: 0) {
-                    ForEach(0..<Int(self.viewModel.game.areaSize.width), id: \.self) { i in
-                        CellView(cellType: self.viewModel.getCellType(i, j))
-                    }
-                }
-            }
+        GameTableView(cellSize: CGSize(width: 20, height: 20),
+                      tableSize: viewModel.game.areaSize) { i, j in
+            viewModel.getCellType(i, j)
         }
         .padding(5)
         .cornerRadius(6.0)
+        .animation(.linear(duration: 0.1),
+                   value: viewModel.game.snake.headPos)
     }
 
     var body: some View {
@@ -86,8 +83,6 @@ struct GameView: View {
 
                 ZStack {
                     tableView
-                    .animation(.linear(duration: 0.1),
-                               value: viewModel.game.snake.headPos)
 
                     if viewModel.shouldShowGameOver {
                         GameOverView()

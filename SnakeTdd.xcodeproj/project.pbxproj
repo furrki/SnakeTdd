@@ -42,6 +42,8 @@
 		FB35D33923F973FF00F71097 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D33823F973FF00F71097 /* CellView.swift */; };
 		FB35D33B23F9756F00F71097 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB35D33A23F9756F00F71097 /* CellType.swift */; };
 		FB6ECC2E2924194800E7119D /* View+snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6ECC2D2924194700E7119D /* View+snapshot.swift */; };
+		FB84D6E229290531009F6B66 /* GameTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB84D6E129290531009F6B66 /* GameTableView.swift */; };
+		FB84D6E62929102C009F6B66 /* TableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB84D6E52929102C009F6B66 /* TableState.swift */; };
 		FBA2AD9C291F93E90025AB17 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2AD9B291F93E90025AB17 /* SettingsView.swift */; };
 		FBA2AD9F291F94060025AB17 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2AD9E291F94060025AB17 /* SettingsViewModel.swift */; };
 		FBA2ADA1291F94AC0025AB17 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA2ADA0291F94AC0025AB17 /* SettingsManager.swift */; };
@@ -120,6 +122,8 @@
 		FB35D33823F973FF00F71097 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		FB35D33A23F9756F00F71097 /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
 		FB6ECC2D2924194700E7119D /* View+snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+snapshot.swift"; sourceTree = "<group>"; };
+		FB84D6E129290531009F6B66 /* GameTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableView.swift; sourceTree = "<group>"; };
+		FB84D6E52929102C009F6B66 /* TableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableState.swift; sourceTree = "<group>"; };
 		FBA2AD9B291F93E90025AB17 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FBA2AD9E291F94060025AB17 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		FBA2ADA0291F94AC0025AB17 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				FB35D33823F973FF00F71097 /* CellView.swift */,
 				FB2FC7AF291F018E00A3C026 /* PhoneButtonsView.swift */,
 				FBA2ADB0292031EA0025AB17 /* GameOverView.swift */,
+				FB84D6E129290531009F6B66 /* GameTableView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -261,8 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				FB1793BB291C5C9F00341D0A /* Components */,
+				FB84D6E32929100F009F6B66 /* Model */,
 				FB105A35291AF0D50095C324 /* Story */,
-				FB35D32623F8AA9D00F71097 /* Enums */,
 				FB105A2D291AE6120095C324 /* Resources */,
 				FB35D32323F8942700F71097 /* Utils */,
 				FB35D2E723F8840D00F71097 /* AppDelegate.swift */,
@@ -347,6 +352,23 @@
 				FB35D33423F9403B00F71097 /* GameViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FB84D6E32929100F009F6B66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB84D6E42929101C009F6B66 /* SaveModels */,
+				FB35D32623F8AA9D00F71097 /* Enums */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB84D6E42929101C009F6B66 /* SaveModels */ = {
+			isa = PBXGroup;
+			children = (
+				FB84D6E52929102C009F6B66 /* TableState.swift */,
+			);
+			path = SaveModels;
 			sourceTree = "<group>";
 		};
 		FBA2AD9D291F93F10025AB17 /* Settings */ = {
@@ -638,6 +660,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB84D6E62929102C009F6B66 /* TableState.swift in Sources */,
 				FB105A34291AF0A50095C324 /* Coordinator.swift in Sources */,
 				FBA2ADAD291FB0EA0025AB17 /* DependencyManager.swift in Sources */,
 				FBA2AD9F291F94060025AB17 /* SettingsViewModel.swift in Sources */,
@@ -649,6 +672,7 @@
 				FB35D31F23F8928B00F71097 /* CGPoint+Extensions.swift in Sources */,
 				FB105A39291AF12A0095C324 /* HomeCoordinator.swift in Sources */,
 				FB2FC7AE291ED6F800A3C026 /* BackButton.swift in Sources */,
+				FB84D6E229290531009F6B66 /* GameTableView.swift in Sources */,
 				FB105A32291AE8060095C324 /* R.generated.swift in Sources */,
 				FB35D31D23F88EF300F71097 /* MoveDirection.swift in Sources */,
 				FBA2ADA6291FB0A90025AB17 /* Storage.swift in Sources */,

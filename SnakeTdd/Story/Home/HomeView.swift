@@ -67,6 +67,34 @@ struct HomeView: View {
                 .font(.system(size: 15, weight: .semibold))
                 .padding(.top, 30)
 
+                if let biggestSnake = storageManager.biggestSnake {
+                    VStack(spacing: 5) {
+                        HStack {
+                            Text("Largest Snake: \(storageManager.highScore)")
+                                .font(.footnote)
+                                .foregroundColor(Color(R.color.commonTitle.name))
+                            Spacer()
+                        }
+                        .frame(width: 160)
+
+                        GameTableView(cellSize: CGSize(width: 10, height: 10), tableSize: CGSize(width: 16, height: 16)) { i, j in
+                            if biggestSnake.snake.tail.contains(CGPoint(x: i, y: j)) {
+                                return .snake
+                            } else if biggestSnake.snake.headPos == CGPoint(x: i, y: j) {
+                                return .snakeHead
+                            } else if biggestSnake.feedPosition == CGPoint(x: i, y: j) {
+                                return .feed
+                            } else {
+                                return .empty
+                            }
+                        }
+                        .cornerRadius(6)
+                        .border(.black.opacity(0.8), width: 3.0)
+                        .cornerRadius(6)
+                    }
+                    .padding(.top, 20)
+                }
+
                 Spacer()
             }
             .sheet(isPresented: $isShowingSettings) {

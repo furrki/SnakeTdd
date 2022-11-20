@@ -6,15 +6,18 @@
 //  Copyright © 2020 Furkan Kaynar. All rights reserved.
 //
 
+import Combine
 import CoreGraphics
 
-class Game {
+class Game: ObservableObject {
     let areaSize: CGSize
     private(set) var score = 0
-    private(set) var snake: Snake
-    private(set) var feedPosition: CGPoint
-    private(set) var state: GameState = .running
-    
+    @Published private(set) var snake: Snake
+    @Published private(set) var feedPosition: CGPoint
+    @Published private(set) var state: GameState = .running
+
+    let objectWillChange = PassthroughSubject<Void, Never>()
+
     init(areaSize: CGSize, snake: Snake) {
         self.areaSize = areaSize
         self.snake = snake
@@ -33,6 +36,7 @@ class Game {
             newPos = CGPoint(x: Int.random(in: 0..<Int(areaSize.width)), y: Int.random(in: 0..<Int(areaSize.height)))
         }
         generateFeed(newPos)
+        objectWillChange.send()
     }
     
     func doMovement() {
@@ -51,7 +55,7 @@ class Game {
                 state = .eat
                 snake.didMovement(isEating: true)
                 score = score + 5
-                 generateRandomFeed()
+                generateRandomFeed()
             } else if state == .eat {
                 state = .running
                 snake.didMovement(isEating: false)
@@ -59,6 +63,8 @@ class Game {
                 snake.didMovement(isEating: false)
             }
         }
+
+        objectWillChange.send()
     }
     
     func checkNextCollision() -> Bool {

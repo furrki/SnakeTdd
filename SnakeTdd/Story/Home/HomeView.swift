@@ -53,10 +53,16 @@ struct HomeView: View {
 
                 Spacer()
 
-                Text("Snake")
-                    .font(Font.system(size: 35, weight: .semibold, design: Font.Design.rounded))
-                    .foregroundColor(Color(R.color.commonTitle.name))
-                    .multilineTextAlignment(.center)
+                VStack(spacing: 0) {
+                    Text("Snake")
+                        .font(Font.system(size: 35, weight: .semibold, design: Font.Design.rounded))
+                        .foregroundColor(Color(R.color.commonTitle.name))
+                        .multilineTextAlignment(.center)
+                    Text("AppGea")
+                        .font(Font.system(size: 12, weight: .semibold, design: Font.Design.rounded))
+                        .foregroundColor(Color(R.color.commonTitle.name))
+                        .multilineTextAlignment(.center)
+                }
 
                 Button("Start Game") {
                     withAnimation {
@@ -92,7 +98,7 @@ struct HomeView: View {
                         .border(.black.opacity(0.8), width: 3.0)
                         .cornerRadius(6)
                     }
-                    .padding(.top, 20)
+                    .padding(.top, 40)
                 }
 
                 Spacer()

@@ -86,7 +86,7 @@ struct GameView: View {
 
                     if viewModel.shouldShowGameOver {
                         GameOverView()
-                            .frame(width:  self.viewModel.game.areaSize.width * 20,
+                            .frame(width: self.viewModel.game.areaSize.width * 20,
                                    height: self.viewModel.game.areaSize.height * 20)
                             .opacity(0.9)
                             .transition(.opacity)
